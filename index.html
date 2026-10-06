@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Wellness Solutions | Herbal Wellness Products Online &mdash; MYALCHE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Lato:wght@400;500;700;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* real-site chrome */
+    --nav-bg:#1e2749;
+    --nav-bg-2:#171e3a;
+    --nav-text:#ffffff;
+    --promo-bg:#fbbc34;
+    --promo-text:#1e2749;
+
+    /* brand greens */
+    --green:#83bf40;
+    --green-mid:#9acb5a;
+    --green-hover:#6ea634;
+    --green-deep:#4a7a2e;
+    --green-tint:#eaf3dc;
+    --forest:#12301f;
+    --forest-2:#1c4a2c;
+
+    /* content palette */
+    --bg:#ffffff;
+    --surface:#ffffff;
+    --surface-2:#f7f6f1;
+    --cream:#fbf5ec;
+    --blush:#fdf1ea;
+    --ink:#1a1f2e;
+    --ink-soft:#2f3345;
+    --ink-muted:#5c5e70;
+    --ink-faint:#8d8fa0;
+    --border:#e8e6df;
+    --danger:#c94b3a;
+
+    --radius-s:6px;
+    --radius-m:10px;
+    --radius-l:14px;
+    --font-head:"Poppins","Lato",Arial,sans-serif;
+    --font-body:"Lato",Arial,Helvetica,sans-serif;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --content-max:1360px;
+
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --ease-out:cubic-bezier(.16,1,.3,1);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;max-width:100%;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--font-body);font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:clip;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  ::selection{background:var(--green-tint);color:var(--green-deep);}
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px;}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  .wrap{max-width:var(--content-max);margin:0 auto;padding:0 28px;}
+  .serif{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.01em;}
+
+  /* ===================== PROMO + HEADER ===================== */
+  .promo-bar{
+    background:var(--promo-bg);color:var(--promo-text);
+    text-align:center;font-size:14.5px;font-weight:700;
+    padding:9px 40px 9px 16px;position:relative;
+  }
+  .promo-bar .promo-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--promo-text);padding:4px;display:flex;}
+
+  header.site{
+    background:var(--nav-bg);color:var(--nav-text);
+    position:sticky;top:0;z-index:50;
+    transition:box-shadow .3s ease,background .3s ease;
+  }
+  header.site.is-stuck{box-shadow:0 10px 30px -12px rgba(0,0,0,.5);background:rgba(30,39,73,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
+  .site-inner{max-width:var(--content-max);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:34px;transition:padding .3s var(--ease);}
+  header.site.is-stuck .site-inner{padding-top:9px;padding-bottom:9px;}
+  .logo{display:flex;align-items:center;line-height:0;}
+  .logo img{height:34px;width:auto;display:block;transition:height .3s var(--ease);}
+  header.site.is-stuck .logo img{height:28px;}
+  nav.main-nav{display:flex;gap:26px;flex:1;font-family:var(--font-head);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;}
+  nav.main-nav a{color:var(--nav-text);display:flex;align-items:center;gap:5px;padding:8px 0;transition:color .15s;}
+  nav.main-nav a:hover{color:var(--green);}
+  nav.main-nav a.has-caret::after{content:"";width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform .15s;}
+  .nav-item{position:relative;}
+  .nav-item.open a.has-caret::after{transform:rotate(180deg);}
+  .nav-dropdown{
+    position:absolute;top:100%;left:0;margin-top:14px;background:#fff;border-radius:var(--radius-m);
+    box-shadow:0 20px 40px -14px rgba(0,0,0,.28);padding:10px;display:grid;grid-template-columns:repeat(2,190px);gap:2px;
+    opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .15s,transform .15s,visibility .15s;z-index:60;
+  }
+  .nav-item.open .nav-dropdown{opacity:1;visibility:visible;transform:none;}
+  .nav-dropdown a{color:var(--ink-soft) !important;font-size:14px;font-weight:500;text-transform:none;letter-spacing:0;padding:8px 10px;border-radius:var(--radius-s);}
+  .nav-dropdown a:hover{background:var(--surface-2);color:var(--green-deep) !important;}
+  .head-actions{display:flex;align-items:center;gap:18px;}
+  .head-actions .link-login{font-family:var(--font-head);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;white-space:nowrap;}
+  .head-actions .link-login:hover{color:var(--green);}
+  .search-pill{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:999px;transition:background .15s;}
+  .search-pill:hover{background:var(--green-deep);}
+  .icon-btn{position:relative;color:var(--nav-text);padding:4px;display:flex;align-items:center;justify-content:center;}
+  .icon-btn:hover{color:var(--green);}
+  .badge{position:absolute;top:-6px;right:-8px;background:var(--green);color:#fff;font-size:11px;font-weight:800;min-width:16px;height:16px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+  .cart-with-total{display:flex;align-items:center;gap:6px;}
+  .cart-with-total .amount{font-size:14px;font-weight:700;white-space:nowrap;}
+  .nav-toggle{display:none;color:var(--nav-text);padding:4px;}
+
+  .drawer{position:fixed;inset:0;z-index:210;background:rgba(18,24,48,.6);display:none;}
+  .drawer.show{display:block;}
+  .drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(86vw,340px);background:var(--nav-bg);padding:22px 24px;display:flex;flex-direction:column;gap:6px;color:#fff;animation:drawerIn .35s var(--ease-out);}
+  @keyframes drawerIn{from{transform:translateX(100%)}to{transform:none}}
+  .drawer-panel a{font-family:var(--font-head);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .drawer-panel a:hover{color:var(--green);}
+  .drawer-close{align-self:flex-end;color:#fff;padding:6px;margin-bottom:8px;}
+
+  .social-rail{position:fixed;left:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;z-index:30;}
+  .social-rail a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#fff;transition:filter .15s,width .2s var(--ease);}
+  .social-rail a:hover{filter:brightness(1.15);width:44px;}
+  .social-rail a svg{width:16px;height:16px;}
+  .social-rail a.fb{background:#1877f2;} .social-rail a.tw{background:#000;} .social-rail a.ig{background:#e4405f;}
+  .social-rail a.th{background:#000;} .social-rail a.yt{background:#f00;} .social-rail a.pin{background:#e60023;}
+  .social-rail a.sn{background:#fffc00;color:#111;} .social-rail a.tt{background:#000;}
+
+  /* ===================== SHARED ===================== */
+  .btn-pill{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--green);color:#fff;font-family:var(--font-head);font-weight:700;font-size:13px;
+    letter-spacing:.07em;text-transform:uppercase;padding:16px 34px;border-radius:999px;min-height:52px;
+    transition:background .2s,transform .25s var(--ease),box-shadow .25s;box-shadow:0 12px 28px -12px rgba(74,122,46,.75);
+  }
+  .btn-pill:hover{background:var(--green-deep);transform:translateY(-2px);}
+  .btn-pill svg{width:15px;height:15px;transition:transform .25s var(--ease);}
+  .btn-pill:hover svg{transform:translateX(4px);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:700;font-size:12.5px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding:13px 22px;border-radius:999px;
+    border:1.5px solid rgba(26,31,46,.18);transition:background .2s,color .2s,border-color .2s;
+  }
+  .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-ghost svg{width:14px;height:14px;transition:transform .25s var(--ease);}
+  .btn-ghost:hover svg{transform:translateX(4px);}
+
+  /* masked word rise (used by every [data-words] heading/statement) */
+  .wm{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .04em .14em 0;margin:0 -.04em -.14em 0;}
+  .wm > i{display:inline-block;font-style:inherit;transform:translateY(112%);transition:transform .95s var(--ease-out) var(--d,0s);}
+  .is-in .wm > i{transform:none;}
+  .u{background:linear-gradient(var(--green),var(--green)) 0 94%/0% .12em no-repeat;transition:background-size 1.1s var(--ease-out) .55s;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .is-in .u{background-size:100% .12em;}
+
+  [data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease-out) var(--d,0s),transform .9s var(--ease-out) var(--d,0s);}
+  [data-reveal="left"]{transform:translateX(-46px);}
+  [data-reveal="right"]{transform:translateX(46px);}
+  [data-reveal="scale"]{transform:scale(.92);}
+  [data-reveal].is-in{opacity:1;transform:none;}
+
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+  /* ===================== 1. HERO — layered scene ===================== */
+  .hero{
+    position:relative;isolation:isolate;overflow:hidden;background:#1a2a12;
+    height:clamp(640px,calc(100svh - 106px),960px);
+  }
+  .hero-stage{position:absolute;inset:0;z-index:0;}
+  .hl{
+    position:absolute;inset:0 -2% 0;background-size:cover;background-position:center bottom;background-repeat:no-repeat;
+    will-change:translate,transform;transition:translate .5s cubic-bezier(.2,.7,.3,1);
+  }
+  .hl-bg{inset:-8% -4% -8%;background-image:url('assets/home/hero-bg.webp');background-position:center 60%;
+    translate:calc(var(--mx,0) * -8px) calc(var(--hp,0) * 9% + var(--my,0) * -5px);transform:scale(1.12);}
+  .hl-bottles{background-image:url('assets/home/hero-bottles.webp');
+    translate:calc(var(--mx,0) * 14px) calc(var(--hp,0) * -5% + var(--my,0) * 6px);opacity:0;transform:translateY(9%);}
+  .hl-center{background-image:url('assets/home/hero-center-bottle.webp');
+    translate:calc(var(--mx,0) * 22px) calc(var(--hp,0) * -9% + var(--my,0) * 9px);opacity:0;transform:translateY(12%) scale(.94);}
+  .hl-stone{background-image:url('assets/home/hero-stone.webp');
+    translate:calc(var(--mx,0) * 6px) 0;opacity:0;transform:translateY(8%);}
+  .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,20,10,.55) 0%,rgba(8,20,10,.08) 34%,rgba(8,20,10,0) 62%,rgba(8,20,10,.4) 100%);}
+
+  .hero.is-ready .hl-bg{transform:none;transition:transform 2.6s var(--ease-out),translate .5s cubic-bezier(.2,.7,.3,1);}
+  .hero.is-ready .hl-bottles{opacity:1;transform:none;transition:opacity 1.2s var(--ease-out) .25s,transform 1.5s var(--ease-out) .25s,translate .5s cubic-bezier(.2,.7,.3,1);}
+  .hero.is-ready .hl-center{opacity:1;transform:none;transition:opacity 1.2s var(--ease-out) .55s,transform 1.6s var(--ease-out) .55s,translate .5s cubic-bezier(.2,.7,.3,1);}
+  .hero.is-ready .hl-stone{opacity:1;transform:none;transition:opacity 1s var(--ease-out) .1s,transform 1.4s var(--ease-out) .1s,translate .5s cubic-bezier(.2,.7,.3,1);}
+
+  .hero-h1{
+    position:absolute;inset:0;z-index:4;margin:0;pointer-events:none;
+    display:flex;justify-content:space-between;align-items:flex-start;
+    padding:clamp(48px,9.5vh,108px) clamp(22px,5vw,84px) 0;
+  }
+  .hw{display:block;font-family:var(--font-head);font-weight:800;font-size:clamp(42px,7.5vw,128px);line-height:.93;letter-spacing:-.035em;color:#fff;filter:drop-shadow(0 8px 26px rgba(0,0,0,.34));opacity:calc(1.3 - var(--hp,0) * 2.1);}
+  .hw-l{translate:calc(var(--hp,0) * -110px) 0;}
+  .hw-r{text-align:right;translate:calc(var(--hp,0) * 110px) 0;}
+  .hw .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em;}
+  .hw .ln > b{display:block;font-weight:inherit;transform:translateY(114%);}
+  .hero.is-ready .hw .ln > b{transform:none;transition:transform 1.25s var(--ease-out) var(--d,0s);}
+
+  .hero-dock{
+    position:absolute;left:50%;bottom:clamp(20px,4.4vh,46px);translate:-50% 0;z-index:5;
+    display:flex;align-items:center;gap:22px;padding:9px 26px 9px 9px;border-radius:999px;
+    background:rgba(12,24,14,.46);border:1px solid rgba(255,255,255,.24);
+    -webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);color:#fff;
+    opacity:0;transform:translateY(24px);
+  }
+  .hero.is-ready .hero-dock{opacity:1;transform:none;transition:opacity 1s var(--ease-out) 1.1s,transform 1s var(--ease-out) 1.1s;}
+  .hero-dock .btn-pill{padding:15px 28px;box-shadow:none;}
+  .hero-trust{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:700;white-space:nowrap;}
+  .hero-trust .stars{display:flex;gap:2px;color:var(--promo-bg);}
+  .hero-trust .stars svg{width:15px;height:15px;}
+  .hero-scroll{position:absolute;left:clamp(22px,5vw,84px);bottom:clamp(24px,5vh,50px);z-index:5;width:1px;height:70px;background:rgba(255,255,255,.3);overflow:hidden;opacity:calc(1 - var(--hp,0) * 4);}
+  .hero-scroll::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:#fff;animation:scrollDrip 2.2s var(--ease) infinite;}
+  @keyframes scrollDrip{to{top:110%}}
+
+  /* ===================== MARQUEE ===================== */
+  .marquee{background:var(--nav-bg-2);color:#fff;overflow:hidden;position:relative;z-index:3;}
+  .marquee-track{display:flex;width:max-content;animation:marq 46s linear infinite;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-group{display:flex;flex:none;}
+  .marquee-item{display:inline-flex;align-items:center;gap:16px;padding:22px 44px;font-family:var(--font-head);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;}
+  .marquee-item svg{width:20px;height:20px;color:var(--green);flex:none;}
+  .marquee-item::after{content:"";width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.28);margin-left:28px;}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ===================== 2. STATEMENT — editorial collage ===================== */
+  .statement{position:relative;background:var(--cream);padding:clamp(84px,10vw,156px) 0 clamp(90px,10vw,150px);overflow:hidden;}
+  .statement::before,.statement::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+  .statement::before{width:46vw;height:46vw;right:-14vw;top:-12vw;background:radial-gradient(circle,rgba(154,203,90,.34),transparent 68%);}
+  .statement::after{width:40vw;height:40vw;left:-14vw;bottom:-10vw;background:radial-gradient(circle,rgba(248,196,176,.5),transparent 68%);}
+  .statement .wrap{position:relative;z-index:1;}
+  .statement-copy{
+    margin:0;max-width:17.5em;font-family:var(--font-head);font-weight:600;
+    font-size:clamp(29px,4.3vw,64px);line-height:1.13;letter-spacing:-.028em;color:var(--ink);
+  }
+  .statement-copy .serif{color:var(--green-deep);font-weight:500;}
+  .collage{display:grid;grid-template-columns:1fr 1.18fr 1fr;gap:clamp(16px,2.2vw,32px);align-items:start;margin-top:clamp(56px,7vw,110px);}
+  .collage figure{margin:0;position:relative;overflow:hidden;background:var(--surface-2);box-shadow:0 40px 60px -40px rgba(30,39,73,.45);}
+  .collage figure:nth-child(1){margin-top:clamp(40px,8vw,130px);border-radius:999px 999px 30px 30px;aspect-ratio:4/5.35;}
+  .collage figure:nth-child(2){border-radius:30px;aspect-ratio:4/5.5;}
+  .collage figure:nth-child(3){margin-top:clamp(70px,13vw,210px);border-radius:30px 30px 999px 999px;aspect-ratio:4/5.2;}
+  .collage img{position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;display:block;
+    translate:0 calc((var(--p,.5) - .5) * -60px);will-change:translate;}
+  .collage figure{clip-path:inset(18% 6% 0 6% round 30px);transition:clip-path 1.5s var(--ease-out) var(--d,0s);}
+  .collage.is-in figure{clip-path:inset(0 0 0 0 round 0);}
+  .collage figure:nth-child(1){--r:999px 999px 30px 30px;}
+  .ring{position:absolute;right:max(28px,6vw);top:clamp(30px,6vw,90px);width:clamp(90px,11vw,150px);aspect-ratio:1;border:1.5px dashed rgba(74,122,46,.55);border-radius:50%;animation:spin 38s linear infinite;z-index:0;}
+  .ring::after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b9dc86,var(--green-deep));opacity:.9;}
+
+  /* ===================== 3. DIFFERENCE — pinned scene ===================== */
+  .difference{position:relative;height:270vh;background:var(--nav-bg-2);}
+  .diff-pin{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:center;}
+  .diff-bg{
+    position:absolute;inset:-4% -4%;background:url('assets/home/body-glow-oil-bg-img-scaled_11zon.webp') 14% center/cover no-repeat;
+    transform:scale(calc(1.2 - var(--sp,0) * .16)) translateX(calc(var(--sp,0) * -2.5%));will-change:transform;
+  }
+  .diff-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,30,58,0) 0%,rgba(23,30,58,.28) 34%,rgba(23,30,58,.9) 62%,rgba(23,30,58,.97) 100%);}
+  .diff-inner{position:relative;z-index:2;width:100%;max-width:var(--content-max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);}
+  .diff-copy{grid-column:2;color:#fff;}
+  .diff-title{margin:0 0 16px;font-family:var(--font-head);font-weight:800;font-size:clamp(34px,4.2vw,62px);line-height:1.02;letter-spacing:-.03em;}
+  .diff-lead{margin:0 0 34px;font-size:clamp(17px,1.5vw,21px);font-weight:700;color:var(--green-mid);}
+  .diff-list{list-style:none;margin:0;padding:0 0 0 30px;position:relative;display:flex;flex-direction:column;gap:14px;}
+  .diff-list::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.14);border-radius:2px;}
+  .diff-list::after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:2px;background:var(--green);border-radius:2px;transform-origin:top;transform:scaleY(var(--sp,0));box-shadow:0 0 14px rgba(131,191,64,.8);}
+  .diff-card{
+    display:flex;align-items:center;gap:18px;padding:20px 24px;border-radius:20px;
+    border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    font-size:clamp(16px,1.35vw,19px);line-height:1.4;color:rgba(255,255,255,.9);
+    opacity:.46;transform:translateX(26px) scale(.97);transition:opacity .6s var(--ease-out),transform .7s var(--ease-out),background .6s,border-color .6s;
+  }
+  .diff-card.is-active{opacity:1;transform:none;background:rgba(255,255,255,.1);border-color:rgba(131,191,64,.55);}
+  .diff-ic{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.28);color:var(--green);transition:background .5s,border-color .5s,color .5s;}
+  .diff-card.is-active .diff-ic{background:var(--green);border-color:var(--green);color:var(--nav-bg-2);}
+  .diff-ic svg{width:22px;height:22px;}
+  .diff-ic path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .7s var(--ease-out) .15s;}
+  .diff-card.is-active .diff-ic path{stroke-dashoffset:0;}
+
+  /* ===================== 4. WHERE TO START — expanding panels ===================== */
+  .start{background:linear-gradient(103deg,#f9d9e6 0%,#f6e3d4 34%,#f3ecc9 66%,#e9eec0 100%);padding:clamp(78px,9vw,130px) 0;position:relative;overflow:hidden;}
+  .start-head{text-align:center;margin-bottom:clamp(40px,5vw,66px);}
+  .start-title{margin:0 0 14px;font-family:var(--font-head);font-weight:800;font-size:clamp(40px,6vw,92px);line-height:.98;letter-spacing:-.035em;color:var(--nav-bg);}
+  .start-sub{margin:0;font-size:clamp(16px,1.5vw,20px);color:var(--ink-muted);}
+  .panels{display:flex;gap:14px;height:clamp(540px,72vh,660px);}
+  .panel{
+    position:relative;flex:1 1 0;min-width:0;border-radius:28px;overflow:hidden;background:#20281e;isolation:isolate;cursor:pointer;
+    transition:flex-grow .75s var(--ease-out),box-shadow .5s;box-shadow:0 30px 50px -34px rgba(30,39,73,.5);
+  }
+  .panel.is-active{flex-grow:3.7;cursor:default;box-shadow:0 40px 70px -30px rgba(30,39,73,.6);}
+  .panel-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 1.1s var(--ease-out);}
+  .panel.is-active .panel-img{transform:scale(1);}
+  .panel::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,14,10,.12) 0%,rgba(8,14,10,0) 34%,rgba(8,14,10,.9) 100%);transition:opacity .5s;}
+  .panel-no{position:absolute;top:20px;left:22px;z-index:2;font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:.14em;color:#fff;opacity:.9;}
+  .panel-label{
+    position:absolute;z-index:2;left:50%;bottom:24px;max-height:74%;
+    writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);
+    color:#fff;font-family:var(--font-head);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;transition:opacity .35s;
+  }
+  .panel.is-active .panel-label{opacity:0;}
+  .panel-info{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:clamp(20px,2.4vw,34px);color:#fff;opacity:0;transform:translateY(22px);pointer-events:none;transition:opacity .45s var(--ease),transform .7s var(--ease-out);}
+  .panel.is-active .panel-info{opacity:1;transform:none;pointer-events:auto;transition-delay:.28s;}
+  .panel-title{margin:0 0 6px;font-family:var(--font-head);font-weight:700;font-size:clamp(22px,2.1vw,30px);line-height:1.15;letter-spacing:-.015em;}
+  .panel-tag{margin:0 0 16px;font-size:clamp(14px,1.2vw,16px);color:rgba(255,255,255,.82);line-height:1.4;max-width:30em;}
+  .panel-buy{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .panel-price{font-family:var(--font-head);font-weight:800;font-size:clamp(26px,2.4vw,34px);color:var(--green-mid);}
+  .panel-info .pc-add{background:#fff;color:var(--ink);}
+  .panel-info .pc-add:hover{background:var(--green);color:#fff;}
+  .panel-info .card-pay{margin-top:14px;color:rgba(255,255,255,.78);}
+  .panel-info .pay-info{border-color:rgba(255,255,255,.6);color:#fff;}
+  .panel-info .affirm-logo,.panel-info .afterpay-badge{filter:brightness(0) invert(1);}
+
+  /* ===================== PRODUCT CARD (rails + grid) ===================== */
+  .pc{
+    position:relative;display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:10px 10px 18px;
+    border:1px solid rgba(30,39,73,.07);box-shadow:0 1px 2px rgba(30,39,73,.04),0 18px 34px -26px rgba(30,39,73,.3);
+    transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out);
+  }
+  .pc:hover{transform:translateY(-8px);box-shadow:0 34px 56px -28px rgba(30,39,73,.4);}
+  .pc-media{position:relative;aspect-ratio:1/1.04;border-radius:16px;overflow:hidden;background:var(--surface-2);}
+  .pc-media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.14);translate:calc(var(--ix,0) * 1%) 0;transition:transform 1s var(--ease-out);}
+  .pc:hover .pc-media img{transform:scale(1.22);}
+  .pc-quick{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateX(8px);transition:opacity .25s,transform .35s var(--ease-out);}
+  .pc:hover .pc-quick,.pc:focus-within .pc-quick{opacity:1;transform:none;}
+  .qbtn{width:34px;height:34px;border-radius:999px;background:#fff;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(30,39,73,.18);transition:background .15s,color .15s;}
+  .qbtn:hover{background:var(--green-deep);color:#fff;}
+  .qbtn.active{background:var(--green);color:#fff;}
+  .qbtn svg{width:15px;height:15px;}
+  .pc-body{padding:15px 8px 0;display:flex;flex-direction:column;gap:5px;flex:1;}
+  .pc-title{margin:0;font-family:var(--font-head);font-size:15.5px;font-weight:600;line-height:1.3;color:var(--ink);}
+  .pc-tag{margin:0;font-size:13.5px;line-height:1.42;color:var(--ink-muted);}
+  .pc-buy{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;}
+  .pc-price{font-family:var(--font-head);font-size:20px;font-weight:700;color:var(--green-deep);display:flex;align-items:baseline;gap:7px;}
+  .pc-price s{font-size:14px;font-weight:500;color:var(--ink-faint);}
+  .pc-add{background:var(--nav-bg);color:#fff;font-family:var(--font-head);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px;border-radius:999px;white-space:nowrap;transition:background .2s,transform .2s;}
+  .pc-add:hover{background:var(--green-deep);transform:scale(1.04);}
+  .pc-add.added{background:var(--green);}
+  .card-pay{display:flex;flex-direction:column;gap:3px;padding-top:10px;font-size:11.5px;color:var(--ink-muted);line-height:1.4;}
+  .pay-line{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+  .pay-brand-inline{display:inline-flex;align-items:center;gap:4px;}
+  .afterpay-badge{height:12px;width:auto;display:block;}
+  .affirm-logo{height:10px;width:auto;display:inline-block;vertical-align:-1px;}
+  .pay-info{width:14px;height:14px;border-radius:999px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-size:9px;font-weight:800;line-height:1;display:flex;align-items:center;justify-content:center;}
+  .pay-info:hover{border-color:var(--green-deep);color:var(--green-deep);}
+  .pay-learn{text-decoration:underline;cursor:pointer;}
+  .pay-learn:hover{color:var(--green-deep);}
+
+  /* ===================== 5. PRINCIPLE — dark, floating bottle ===================== */
+  .principle{
+    position:relative;overflow:hidden;color:#fff;margin-top:-44px;border-radius:44px 44px 0 0;z-index:2;
+    background:radial-gradient(120% 90% at 82% 8%,var(--forest-2) 0%,var(--forest) 52%,#0b1f14 100%);
+    padding:clamp(100px,12vw,190px) 0 clamp(96px,11vw,170px);
+  }
+  .principle::before{content:"";position:absolute;width:60vw;height:60vw;left:-22vw;bottom:-30vw;border-radius:50%;background:radial-gradient(circle,rgba(131,191,64,.2),transparent 65%);pointer-events:none;}
+  .principle-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.8fr);gap:clamp(24px,4vw,70px);align-items:center;}
+  .principle-text{margin:0;font-family:var(--font-head);font-weight:600;font-size:clamp(27px,3.6vw,54px);line-height:1.18;letter-spacing:-.027em;}
+  .principle-text .serif{color:var(--green-mid);}
+  .principle-text .u{--green:var(--green-mid);}
+  .principle-bottle{position:relative;display:flex;justify-content:center;min-height:min(64vw,640px);}
+  .principle-bottle img{
+    position:absolute;top:50%;left:50%;height:clamp(380px,48vw,700px);width:auto;
+    translate:-50% -50%;
+    transform:translateY(calc((.5 - var(--p,.5)) * 130px)) rotate(calc((var(--p,.5) - .5) * 26deg - 4deg));
+    filter:drop-shadow(0 50px 60px rgba(0,0,0,.55));will-change:transform;
+  }
+  .principle-bottle::before{content:"";position:absolute;left:50%;top:50%;width:min(36vw,440px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+    background:radial-gradient(circle,rgba(131,191,64,.5),rgba(131,191,64,0) 66%);transform:scale(calc(.7 + var(--p,.5) * .6));}
+
+  /* ===================== 6. WHAT IS A HERBAL CLEANSER ===================== */
+  .cleanser{background:linear-gradient(118deg,var(--green-tint) 0%,#f3f7e8 46%,#fdfaf2 100%);padding:clamp(86px,10vw,150px) 0;position:relative;overflow:hidden;}
+  .cleanser-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(36px,6vw,100px);align-items:start;}
+  .cl-media{position:sticky;top:130px;}
+  .cl-arch{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 50px 70px -40px rgba(30,39,73,.5);clip-path:inset(14% 0 0 0 round 999px 999px 28px 28px);transition:clip-path 1.6s var(--ease-out);}
+  .cl-media.is-in .cl-arch{clip-path:inset(0 0 0 0 round 999px 999px 28px 28px);}
+  .cl-arch img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;translate:0 calc((var(--p,.5) - .5) * -50px);}
+  .cl-ring{position:absolute;z-index:2;right:-26px;top:30px;width:118px;aspect-ratio:1;border:1.5px dashed rgba(74,122,46,.6);border-radius:50%;animation:spin 30s linear infinite;}
+  .cl-ring::after{content:"";position:absolute;inset:24%;border-radius:50%;background:var(--green);}
+  .cl-dot{position:absolute;z-index:2;left:-20px;bottom:22%;width:56px;height:56px;border-radius:50%;background:var(--promo-bg);animation:float 6s ease-in-out infinite;box-shadow:0 18px 30px -14px rgba(251,188,52,.9);}
+  .cl-title{margin:0 0 clamp(30px,4vw,54px);font-family:var(--font-head);font-weight:800;font-size:clamp(36px,5vw,76px);line-height:1;letter-spacing:-.035em;color:var(--nav-bg);}
+  .steps{position:relative;padding-left:clamp(30px,3.4vw,50px);display:flex;flex-direction:column;gap:clamp(26px,3.4vw,46px);}
+  .steps::before,.steps::after{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;border-radius:2px;}
+  .steps::before{background:rgba(74,122,46,.2);}
+  .steps::after{background:var(--green-deep);transform-origin:top;transform:scaleY(clamp(0,calc((var(--p,0) - .22) * 2.3),1));}
+  .step{position:relative;margin:0;font-size:clamp(16px,1.35vw,19px);line-height:1.7;color:var(--ink-soft);}
+  .step::before{content:"";position:absolute;left:calc(-1 * clamp(30px,3.4vw,50px) + 0px);top:.55em;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid rgba(74,122,46,.4);transition:background .5s,border-color .5s,transform .6s var(--ease-out);}
+  .step.is-in::before{background:var(--green-deep);border-color:var(--green-deep);transform:scale(1.15);}
+  .step.lead{font-family:var(--font-head);font-weight:600;font-size:clamp(21px,2.2vw,31px);line-height:1.3;color:var(--ink);letter-spacing:-.015em;}
+
+  /* ===================== 7. REAL INGREDIENTS — kinetic type ===================== */
+  .ingredients{position:relative;overflow:hidden;background:var(--blush);padding:clamp(80px,9vw,140px) 0 clamp(84px,9vw,140px);text-align:center;}
+  .ing-glow{position:absolute;left:50%;top:50%;width:min(62vw,760px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(154,203,90,.42),rgba(154,203,90,0) 66%);transform:scale(calc(.6 + var(--e,0) * .55));}
+  .ingredients{--e:clamp(0,calc((var(--p,0) - .1) * 1.9),1);}
+  .ing-row{position:relative;z-index:1;margin:0;font-family:var(--font-head);font-weight:800;line-height:.98;letter-spacing:-.04em;white-space:nowrap;}
+  .ing-a{font-size:clamp(38px,8.3vw,138px);color:var(--nav-bg);translate:calc((var(--p,.5) - .5) * -7vw) 0;}
+  .ing-b{font-size:clamp(30px,6.6vw,110px);color:transparent;-webkit-text-stroke:clamp(1.5px,.16vw,3px) var(--nav-bg);translate:calc((var(--p,.5) - .5) * 7vw) 0;}
+  .ing-stage{position:relative;z-index:3;height:clamp(250px,29vw,420px);margin:clamp(4px,.6vw,10px) 0;pointer-events:none;}
+  .ing-stage img{position:absolute;top:50%;height:108%;width:auto;filter:drop-shadow(0 38px 44px rgba(30,39,73,.34));will-change:transform,translate;}
+  .ing-stage img.b1{left:50%;translate:calc(-50% + (var(--e,0) - 1) * 5vw - 15vw * var(--e,0)) calc(-50% + (1 - var(--e,0)) * 24%);rotate:calc((1 - var(--e,0)) * -16deg - 6deg);}
+  .ing-stage img.b2{left:50%;translate:calc(-50% + (1 - var(--e,0)) * -5vw + 15vw * var(--e,0)) calc(-50% + (1 - var(--e,0)) * 32%);rotate:calc((1 - var(--e,0)) * 16deg + 5deg);}
+  .ing-cta{position:relative;z-index:4;margin-top:clamp(18px,3vw,36px);}
+
+  /* ===================== 8. REVIEWS — featured slider ===================== */
+  .reviews{background:#fff;padding:clamp(84px,10vw,150px) 0;position:relative;overflow:hidden;}
+  .rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,72px);}
+  .rev-title{margin:0;font-family:var(--font-head);font-weight:800;font-size:clamp(36px,5.4vw,84px);line-height:.98;letter-spacing:-.035em;color:var(--nav-bg);max-width:12em;}
+  .rev-count{font-family:var(--font-head);font-weight:600;font-size:15px;letter-spacing:.14em;color:var(--ink-faint);}
+  .rev-count b{color:var(--ink);font-size:30px;font-weight:700;letter-spacing:-.02em;margin-right:4px;}
+  .rev-stage{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.24fr);gap:clamp(34px,6vw,100px);align-items:center;}
+  .rev-photos{position:relative;aspect-ratio:4/4.7;}
+  .rev-photos::before{content:"";position:absolute;inset:0;border:1.5px solid rgba(74,122,46,.5);border-radius:999px 999px 30px 30px;translate:18px 18px;}
+  .rev-ph{position:absolute;inset:0;border-radius:999px 999px 30px 30px;overflow:hidden;opacity:0;transform:scale(1.06);transition:opacity .9s var(--ease),transform 1.2s var(--ease-out);box-shadow:0 44px 60px -38px rgba(30,39,73,.55);}
+  .rev-ph.is-active{opacity:1;transform:none;}
+  .rev-ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .rev-body{position:relative;}
+  .rev-body::before{content:"\201C";position:absolute;left:-.06em;top:-.42em;font-family:var(--serif);font-style:italic;font-size:clamp(150px,18vw,260px);line-height:1;color:var(--green-tint);z-index:0;pointer-events:none;}
+  .rev-slides{display:grid;position:relative;z-index:1;}
+  .rev-slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(28px);transition:opacity .7s var(--ease),transform .9s var(--ease-out),visibility 0s .7s;}
+  .rev-slide.is-active{opacity:1;visibility:visible;transform:none;transition-delay:.15s,.15s,0s;}
+  .rev-stars{display:flex;gap:4px;color:var(--promo-bg);margin-bottom:20px;}
+  .rev-stars svg{width:20px;height:20px;}
+  .rev-quote{margin:0 0 26px;font-family:var(--font-head);font-weight:500;font-size:clamp(19px,2.15vw,31px);line-height:1.46;letter-spacing:-.012em;color:var(--ink);}
+  .rev-name{margin:0;font-family:var(--font-head);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--green-deep);display:flex;align-items:center;gap:14px;}
+  .rev-name::before{content:"";width:42px;height:2px;background:var(--green);}
+  .rev-nav{display:flex;align-items:center;gap:14px;margin-top:clamp(28px,3.4vw,46px);position:relative;z-index:1;}
+  .rev-thumb{position:relative;width:62px;height:62px;border-radius:50%;overflow:hidden;opacity:.5;transition:opacity .3s,transform .3s var(--ease-out);outline-offset:3px;}
+  .rev-thumb img{width:100%;height:100%;object-fit:cover;}
+  .rev-thumb:hover{opacity:.85;}
+  .rev-thumb.is-active{opacity:1;transform:scale(1.1);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--green);}
+  .rev-bar{flex:1;height:3px;background:var(--border);border-radius:3px;overflow:hidden;margin-left:10px;}
+  .rev-bar i{display:block;height:100%;width:100%;background:var(--green-deep);transform-origin:left;transform:scaleX(0);}
+  .rev-bar i.run{animation:revBar var(--dur,8s) linear forwards;}
+  @keyframes revBar{to{transform:scaleX(1)}}
+
+  /* ===================== 9 / 11. SHELVES ===================== */
+  .shelf{position:relative;padding:clamp(84px,9vw,140px) 0;overflow:hidden;}
+  .shelf.seamoss{background:linear-gradient(103deg,#f9d9e6 0%,#f6e3d4 34%,#f3ecc9 66%,#e9eec0 100%);}
+  .shelf.bodycare{background:linear-gradient(103deg,#e3eef8 0%,#eef1e2 42%,#f7eccd 72%,#f6e2c6 100%);}
+  .shelf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,52px);}
+  .shelf-title{margin:0;font-family:var(--font-head);font-weight:800;font-size:clamp(50px,8.2vw,132px);line-height:.92;letter-spacing:-.04em;color:var(--nav-bg);}
+  .shelf-title .serif{font-weight:500;color:var(--green-deep);letter-spacing:-.03em;}
+  .shelf-sub{margin:12px 0 0;font-size:15px;color:var(--ink-muted);font-weight:700;letter-spacing:.04em;}
+  .shelf-actions{display:flex;align-items:center;gap:12px;padding-bottom:8px;}
+  .rail-btn{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(26,31,46,.18);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s,opacity .2s,transform .2s;}
+  .rail-btn:hover{background:var(--ink);border-color:var(--ink);color:#fff;transform:scale(1.06);}
+  .rail-btn[disabled]{opacity:.35;pointer-events:none;}
+  .rail-btn svg{width:17px;height:17px;}
+
+  .rail{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;padding:10px 4px 26px;margin:0 -4px;scrollbar-width:none;cursor:grab;scroll-behavior:smooth;}
+  .rail::-webkit-scrollbar{display:none;}
+  .rail.is-dragging{cursor:grabbing;scroll-behavior:auto;user-select:none;}
+  .rail.is-dragging .pc{pointer-events:none;}
+  .rail .pc{flex:0 0 clamp(244px,22.5vw,296px);}
+  .rail-progress{height:3px;background:rgba(26,31,46,.12);border-radius:3px;overflow:hidden;margin-top:6px;}
+  .rail-progress i{display:block;height:100%;width:100%;background:var(--ink);border-radius:3px;transform-origin:left;transform:scaleX(.1);}
+
+  .bodygrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;}
+  .bodygrid .pc.is-hidden{display:none;}
+  .bodygrid .pc.pop{animation:cardPop .8s var(--ease-out) var(--d,0s) backwards;}
+  @keyframes cardPop{from{opacity:0;transform:translateY(40px) scale(.95)}}
+  .more-row{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:clamp(36px,4.4vw,60px);}
+  .more-meter{width:min(320px,70vw);height:3px;background:rgba(26,31,46,.12);border-radius:3px;overflow:hidden;}
+  .more-meter i{display:block;height:100%;background:var(--green-deep);width:0;transition:width .6s var(--ease-out);}
+  .more-note{font-size:13.5px;color:var(--ink-muted);font-weight:700;letter-spacing:.04em;margin:0;}
+
+  /* ===================== 10. BELIEF — inline imagery ===================== */
+  .belief{position:relative;overflow:hidden;color:#fff;margin-top:-44px;border-radius:44px 44px 0 0;z-index:2;
+    background:linear-gradient(130deg,#2f5c3a 0%,var(--green-deep) 54%,#5c9438 100%);padding:clamp(100px,12vw,190px) 0;}
+  .belief::before,.belief::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(10px);}
+  .belief::before{width:44vw;height:44vw;right:-12vw;top:-16vw;background:radial-gradient(circle,rgba(251,188,52,.28),transparent 66%);}
+  .belief::after{width:38vw;height:38vw;left:-10vw;bottom:-18vw;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 66%);}
+  .belief p{position:relative;z-index:1;margin:0 auto;max-width:17.5em;text-align:center;font-family:var(--font-head);font-weight:600;font-size:clamp(27px,4.1vw,62px);line-height:1.28;letter-spacing:-.028em;}
+  .belief .pq-ico{display:inline-block;vertical-align:middle;height:1.02em;width:auto;margin:0 .14em;border-radius:12px;background:#fff;padding:.06em .14em;
+    transform:scale(.2) rotate(-24deg);opacity:0;transition:transform 1s var(--ease-out) var(--d,.7s),opacity .5s var(--d,.7s);box-shadow:0 14px 26px -12px rgba(0,0,0,.45);}
+  .belief .is-in .pq-ico,.belief p.is-in .pq-ico{transform:rotate(var(--rot,-5deg));opacity:1;}
+
+  /* ===================== FOOTER ===================== */
+  footer.site{position:relative;background:var(--nav-bg-2);color:#fff;padding:clamp(70px,8vw,120px) 0 0;margin-top:-44px;border-radius:44px 44px 0 0;z-index:3;overflow:hidden;}
+  .news-card{
+    position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,60px);align-items:center;
+    padding:clamp(30px,4.4vw,64px);border-radius:34px;overflow:hidden;
+    background:linear-gradient(120deg,var(--green-deep),#6ea634 70%,#8cc34f);
+  }
+  .news-card::after{content:"";position:absolute;right:-8%;top:-60%;width:46%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.14);}
+  .news-card h3{position:relative;z-index:1;margin:0;font-family:var(--font-head);font-weight:700;font-size:clamp(24px,3vw,42px);line-height:1.15;letter-spacing:-.02em;}
+  .news-field{position:relative;z-index:1;display:flex;align-items:center;background:#fff;border-radius:999px;padding:6px 6px 6px 26px;}
+  .news-field input{flex:1;min-width:0;border:none;background:transparent;outline:none;font-family:var(--font-body);font-size:16px;color:var(--ink);padding:12px 0;}
+  .news-field input::placeholder{color:var(--ink-faint);}
+  .news-field button{width:52px;height:52px;border-radius:50%;flex:none;background:var(--nav-bg);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .25s var(--ease);}
+  .news-field button:hover{background:var(--green-deep);transform:scale(1.07);}
+  .news-field button svg{width:18px;height:18px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1.1fr;gap:40px;padding:clamp(48px,6vw,84px) 0 clamp(40px,5vw,64px);position:relative;z-index:1;}
+  .footer-brand img{height:44px;width:auto;display:block;}
+  .footer-col h4{margin:0 0 20px;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-mid);}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .footer-col a,.footer-col li{font-size:15.5px;color:rgba(255,255,255,.78);}
+  .footer-col a{display:inline-block;transition:color .15s,transform .25s var(--ease);}
+  .footer-col a:hover{color:#fff;transform:translateX(5px);}
+  .footer-contact li{display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+  .footer-contact svg{width:16px;height:16px;flex:none;margin-top:4px;color:var(--green);}
+  .footer-social{display:flex;flex-wrap:wrap;gap:10px;max-width:200px;}
+  .footer-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .3s var(--ease-out);}
+  .footer-social a:hover{background:var(--green);transform:translateY(-4px);}
+  .footer-social svg{width:16px;height:16px;}
+  .footer-bottom{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12);padding:22px 0 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:rgba(255,255,255,.62);}
+  .footer-bottom a{color:rgba(255,255,255,.8);margin-left:20px;}
+  .footer-bottom a:hover{color:#fff;}
+  .footer-mark{position:relative;z-index:0;text-align:center;font-family:var(--font-head);font-weight:800;font-size:clamp(70px,21vw,330px);line-height:.78;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.12);margin-bottom:-.12em;user-select:none;pointer-events:none;white-space:nowrap;}
+  .to-top{position:fixed;right:22px;bottom:22px;z-index:40;width:48px;height:48px;border-radius:50%;background:var(--nav-bg);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .4s var(--ease-out),background .2s;}
+  .to-top.show{opacity:1;transform:none;pointer-events:auto;}
+  .to-top:hover{background:var(--green-deep);}
+  .to-top svg{width:18px;height:18px;}
+
+  /* ===================== TOAST + OVERLAYS ===================== */
+  #toast{position:fixed;top:112px;right:24px;transform:translateX(120%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:600;box-shadow:0 12px 24px rgba(0,0,0,.2);display:flex;align-items:center;gap:8px;max-width:min(360px,calc(100vw - 48px));opacity:0;pointer-events:none;transition:all .3s ease;z-index:300;}
+  #toast.show{opacity:1;transform:none;}
+  .overlay{position:fixed;inset:0;background:rgba(30,39,73,.55);z-index:200;display:none;align-items:center;justify-content:center;padding:24px 16px;}
+  .overlay.show{display:flex;}
+  html.modal-open{overflow:hidden;}
+  #searchOverlay{align-items:flex-start;padding-top:120px;}
+  .search-box{width:min(680px,92vw);background:#fff;border-radius:var(--radius-l);padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.25);}
+  .search-box input{width:100%;border:none;border-bottom:2px solid var(--border);padding:12px 4px;font-size:20px;font-family:var(--font-body);outline:none;color:var(--ink);}
+  .search-box input:focus{border-bottom-color:var(--green);}
+  .search-box .suggest{margin-top:16px;font-size:14px;color:var(--ink-muted);}
+  .search-box .suggest span{display:inline-block;background:var(--surface-2);padding:5px 12px;border-radius:99px;margin:4px 4px 0 0;color:var(--ink-soft);cursor:pointer;}
+  .search-box .suggest span:hover{background:var(--green-tint);color:var(--green-deep);}
+  .pay-modal-box{width:min(560px,92vw);background:#171e3a;color:#fff;border-radius:var(--radius-l);padding:32px 32px 26px;box-shadow:0 30px 60px rgba(0,0,0,.35);position:relative;}
+  .pay-modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;color:#fff;border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;}
+  .pay-modal-close:hover{background:rgba(255,255,255,.1);}
+  .pay-modal-box h3{font-family:var(--font-head);font-size:22px;font-weight:700;text-align:center;margin:6px 0 22px;color:#fff;}
+  .pay-modal-plans{display:flex;flex-direction:column;gap:12px;margin-bottom:18px;}
+  .pay-plan{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
+  .pay-plan-left{display:flex;flex-direction:column;gap:3px;}
+  .pay-plan-amount{font-size:17px;font-weight:800;color:#a4b8ff;}
+  .pay-plan-freq{font-size:12.5px;color:rgba(255,255,255,.65);}
+  .pay-plan-when{font-size:12.5px;color:rgba(255,255,255,.5);}
+  .pay-modal-note{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.55;text-align:center;margin:0;}
+  #quizOverlay{z-index:240;}
+  .quiz-box{position:relative;width:min(880px,94vw);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);max-height:92vh;}
+  .quiz-body{padding:clamp(30px,4vw,52px) clamp(26px,3.6vw,46px);display:flex;flex-direction:column;justify-content:center;gap:10px;}
+  .quiz-body h2{font-family:var(--font-head);font-size:clamp(23px,2.6vw,31px);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin:0;color:var(--ink);}
+  .quiz-body p{font-size:15px;color:var(--ink-muted);margin:4px 0 20px;}
+  .quiz-options{display:flex;flex-direction:column;gap:10px;}
+  .quiz-options a{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--green);color:#fff;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.04em;padding:14px 20px;border-radius:999px;min-height:48px;transition:background .15s,transform .15s;}
+  .quiz-options a:hover{background:var(--green-deep);transform:translateY(-1px);}
+  .quiz-media{background:var(--surface-2);}
+  .quiz-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .quiz-close{position:absolute;top:14px;right:14px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+  .quiz-close:hover{background:#fff;color:var(--green-deep);}
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:1100px){
+    nav.main-nav{gap:18px;font-size:13px;} .site-inner{gap:20px;}
+    .bodygrid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:980px){
+    nav.main-nav,.head-actions .link-login{display:none;}
+    .nav-toggle{display:flex;} .site-inner{justify-content:space-between;} .logo{flex:1;}
+
+    .hw{font-size:clamp(40px,9.6vw,96px);}
+    .hero-h1{flex-direction:column;justify-content:flex-start;gap:6px;padding-top:clamp(34px,6vh,70px);}
+    .hw-r{align-self:flex-end;}
+    .collage{grid-template-columns:1fr 1fr;} .collage figure:nth-child(3){grid-column:1/-1;margin-top:0;aspect-ratio:16/10;border-radius:30px;}
+
+    .difference{height:auto;}
+    .diff-pin{position:relative;top:0;height:auto;display:block;overflow:visible;}
+    .diff-bg{position:relative;inset:auto;height:320px;transform:none;margin:0;}
+    .diff-bg::after{background:linear-gradient(180deg,rgba(23,30,58,0) 40%,var(--nav-bg-2) 100%);}
+    .diff-inner{display:block;padding:34px 20px 70px;}
+    .diff-card{opacity:1;transform:none;background:rgba(255,255,255,.08);}
+    .diff-ic{background:var(--green);border-color:var(--green);color:var(--nav-bg-2);} .diff-ic path{stroke-dashoffset:0;}
+    .diff-list::after{transform:scaleY(1);}
+
+    .panels{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;margin:0 -4px;scrollbar-width:none;}
+    .panels::-webkit-scrollbar{display:none;}
+    .panel{flex:0 0 min(78vw,340px);height:520px;scroll-snap-align:start;cursor:default;}
+    .panel-img{transform:none;}
+    .panel-info{opacity:1;transform:none;pointer-events:auto;}
+    .panel-label{display:none;}
+    .panel.is-active{flex-grow:0;}
+
+    .principle-grid,.cleanser-grid,.rev-stage{grid-template-columns:1fr;}
+    .principle-bottle{min-height:380px;order:-1;} .principle-bottle img{height:420px;}
+    .cl-media{position:relative;top:0;width:100%;max-width:440px;margin:0 auto;}
+    .rev-photos{max-width:420px;margin:0 auto;width:100%;}
+    .news-card{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .bodygrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+    .bodygrid .pc{padding:8px 8px 14px;border-radius:18px;}
+    .bodygrid .pc-buy{flex-direction:column;align-items:stretch;gap:10px;}
+    .bodygrid .pc-add{text-align:center;}
+    .pc-title{font-size:14.5px;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px;}
+    .promo-bar{font-size:12.5px;padding:8px 36px 8px 14px;}
+    .site-inner{padding:12px 16px;gap:12px;} .logo img{height:28px;}
+    .search-pill span{display:none;} .search-pill{padding:9px 12px;} .cart-with-total .amount{display:none;}
+    .social-rail{display:none;}
+    .hero{height:clamp(600px,calc(100svh - 96px),780px);}
+    .hl-bottles{display:none;}
+    .hero-dock{flex-direction:column;gap:12px;border-radius:30px;padding:14px 18px 16px;width:calc(100% - 32px);}
+    .hero-dock .btn-pill{width:100%;}
+    .hero-scroll{display:none;}
+    .marquee-item{padding:18px 28px;font-size:12.5px;}
+    .collage{grid-template-columns:1fr;} .collage figure:nth-child(n){margin-top:0;aspect-ratio:4/4.6;}
+    .collage figure:nth-child(1){border-radius:999px 999px 30px 30px;} .collage figure:nth-child(2){border-radius:30px;} .collage figure:nth-child(3){grid-column:auto;aspect-ratio:4/4.6;border-radius:30px 30px 999px 999px;}
+    .rail{gap:14px;padding-left:16px;padding-right:16px;margin:0 -16px;}
+    .rail .pc{flex-basis:72vw;max-width:290px;}
+    .panels{padding-left:16px;padding-right:16px;margin:0 -16px;}
+    .shelf-actions .rail-btn{display:none;}
+    .rev-thumb{width:52px;height:52px;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px;} .footer-bottom a{margin:0 18px 0 0;}
+    #toast{left:16px;right:16px;top:auto;bottom:16px;max-width:none;transform:translateY(120%);justify-content:center;} #toast.show{transform:none;}
+    .quiz-box{grid-template-columns:1fr;} .quiz-media{display:none;}
+    .principle,.belief,footer.site{border-radius:30px 30px 0 0;margin-top:-30px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001s !important;animation-iteration-count:1 !important;transition-duration:.001s !important;transition-delay:0s !important;}
+    html{scroll-behavior:auto;} .rail{scroll-behavior:auto;}
+    .hl,.hero-dock,.hw .ln > b,[data-reveal],.wm > i,.collage figure,.cl-arch,.belief .pq-ico{opacity:1 !important;transform:none !important;clip-path:none !important;}
+  }
+</style>
+<link rel="stylesheet" href="assets/home-seamless.css">
+</head>
+<body>
+
+<div class="promo-bar" id="promoBar">
+  🚨 Now Offering AfterPay and Affirm | PAY LATER, Buy Now at checkout 🚨
+  <button class="promo-close" id="promoClose" aria-label="Dismiss announcement">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<header class="site">
+  <div class="site-inner">
+    <a class="logo" href="/" aria-label="MYALCHE home"><img src="assets/home/main-logo.webp" alt="MYALCHE"></a>
+    <nav class="main-nav">
+      <div class="nav-item" id="shopNavItem">
+        <a href="/shop/" class="has-caret">Shop</a>
+        <div class="nav-dropdown">
+          <a href="/shop/">New Arrivals</a><a href="/product-category/bundles/">Bundles</a>
+          <a href="/product-category/health-food-shop/">Health Food Shop</a><a href="/product-category/health-capsules/">Health Capsules</a>
+          <a href="/product-category/mushrooms/">Mushrooms</a><a href="/product-category/accessories/">Accessories</a>
+          <a href="/product-category/body-care/">Body Care</a><a href="/product-category/clothing/">Clothing</a>
+          <a href="/product-category/herbal-elixirs/">Herbal Elixirs</a><a href="/product-category/health-herbs/">Health Herbs</a>
+          <a href="/product-category/tea/">Tea Bags</a><a href="/product-category/wildcrafted-sea-moss/">Wildcrafted Sea Moss</a>
+          <a href="/product-category/seasonings/">Seasonings</a><a href="/product-category/dried-food/">Dried Food</a>
+          <a href="/product-category/food-powders/">Food Powders</a><a href="/product-category/fruits-vegetables/">Fruits &amp; Vegetables</a>
+          <a href="/product-category/juices-drinks/">Juices</a><a href="/product-category/loose-herbs/">Loose Herbs</a>
+        </div>
+      </div>
+      <a href="/product-category/meal-prep-delivery/">Meal Prep Delivery</a>
+      <a href="/nutrition-guide/">Nutrition Guide</a>
+      <a href="/news-articles-and-blog-posts/">News Articles | Blog Posts</a>
+      <a href="/product/gift-card/">Gift Card</a>
+    </nav>
+    <div class="head-actions">
+      <a class="link-login" href="/my-account/">Login / Register</a>
+      <button class="search-pill" id="searchBtn" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.4"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span>Search</span>
+      </button>
+      <a class="icon-btn cart-with-total" href="/cart/" aria-label="Cart">
+        <span style="position:relative;display:flex;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 7h12l-1.2 11.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 7z" stroke="currentColor" stroke-width="1.8"/><path d="M9 7V5.8A3 3 0 0 1 12 3a3 3 0 0 1 3 2.8V7" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span class="badge" id="cartBadge">0</span>
+        </span>
+        <span class="amount" id="cartTotal">$0.00</span>
+      </a>
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.6-7-9.2A4 4 0 0 1 12 8a4 4 0 0 1 7-1.2c0 4.6-7 13.2-7 13.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="badge" id="wishBadge">0</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="page-progress" aria-hidden="true"><i id="pageProgress"></i></div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-panel">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <a href="/shop/">Shop</a>
+    <a href="/product-category/meal-prep-delivery/">Meal Prep Delivery</a>
+    <a href="/nutrition-guide/">Nutrition Guide</a>
+    <a href="/news-articles-and-blog-posts/">News Articles | Blog Posts</a>
+    <a href="/product/gift-card/">Gift Card</a>
+    <a href="/my-account/">Login / Register</a>
+  </div>
+</div>
+
+<div class="social-rail" id="socialRail" aria-label="Follow MYALCHE"></div>
+
+<main>
+
+<!-- ================= 1. HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-stage" aria-hidden="true">
+    <div class="hl hl-bg"></div>
+    <div class="hl hl-bottles"></div>
+    <div class="hl hl-center"></div>
+    <div class="hl hl-stone"></div>
+  </div>
+  <div class="hero-shade"></div>
+
+  <h1 class="hero-h1">
+    <span class="hw hw-l"><span class="ln" style="--d:.15s"><b>WHERE</b></span> <span class="ln" style="--d:.27s"><b>PLANTS</b></span></span>
+    <span class="hw hw-r"><span class="ln" style="--d:.39s"><b>MEET</b></span> <span class="ln" style="--d:.51s"><b>PURPOSE</b></span></span>
+  </h1>
+
+  <div class="hero-dock">
+    <a class="btn-pill" href="/shop/">
+      Shop Now
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <span class="hero-trust">
+      <span class="stars" aria-hidden="true" id="heroStars"></span>
+      <span>Trusted by over <b data-countup="10000">10,000</b> customers</span>
+    </span>
+  </div>
+  <span class="hero-scroll" aria-hidden="true"></span>
+</section>
+
+<!-- ================= MARQUEE (the three hero badges) ================= -->
+<div class="marquee" aria-label="Natural, Herbal Ingredients, 100% Plant Based, Holistic Detox &amp; Body Balance">
+  <div class="marquee-track" id="marqTrack">
+    <div class="marquee-group">
+      <span class="marquee-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-1-7 3-11 7-3 7-3 0 5-3 8-7 6-7 6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 21s0-4-2-7-5-2.5-5-2.5 0 3.5 2 6 5 3.5 5 3.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Natural, Herbal Ingredients
+      </span>
+      <span class="marquee-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 3 6 6 6 9a6 6 0 0 1-12 0c0-3 2-6 6-9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        100% Plant Based
+      </span>
+      <span class="marquee-item">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 3.5c3 3.5 3 13.5 0 17M3.5 12h17" stroke="currentColor" stroke-width="1.8"/></svg>
+        Holistic Detox &amp; Body Balance
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 2. STATEMENT ================= -->
+<section class="statement" id="statement">
+  <span class="ring" aria-hidden="true"></span>
+  <div class="wrap">
+    <p class="statement-copy" data-words>At MYALCHE <span class="serif u">wellness is a lifestyle.</span> We support the body's <span class="serif">natural balance</span> from within through herbs, nourishing foods and intentional daily healthy habits.</p>
+    <div class="collage" data-scrub>
+      <figure style="--d:0s"><img src="assets/home/grid-img-1_11zon.webp" alt="Soursop Bitter Cleanser" loading="lazy"></figure>
+      <figure style="--d:.14s"><img src="assets/home/proudct-image-2_11zon.webp" alt="Sea Moss Gel" loading="lazy"></figure>
+      <figure style="--d:.28s"><img src="assets/home/grid-img-3_11zon.webp" alt="Batana Oil" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. WHAT MAKES MYALCHE DIFFERENT (pinned) ================= -->
+<section class="difference" id="difference">
+  <div class="diff-pin">
+    <div class="diff-bg" role="img" aria-label="Body Glow Oil"></div>
+    <div class="diff-inner">
+      <div class="diff-copy">
+        <h2 class="diff-title" data-words>WHAT MAKES MYALCHE DIFFERENT</h2>
+        <p class="diff-lead" data-reveal>Crafted from nature, made for restoration</p>
+        <ul class="diff-list">
+          <li class="diff-card is-active"><span class="diff-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Wellness rooted in herbs, foods and natural practices</span></li>
+          <li class="diff-card"><span class="diff-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Focusing on internal balance rather than temporary fixes</span></li>
+          <li class="diff-card"><span class="diff-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>A lifestyle approach to physical, mental and spiritual health</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. WHERE TO START (expanding panels) ================= -->
+<section class="start" id="start">
+  <div class="wrap">
+    <div class="start-head">
+      <h2 class="start-title" data-words>WHERE TO START</h2>
+      <p class="start-sub" data-reveal style="--d:.2s">Explore simple ways to support your wellness routine.</p>
+    </div>
+    <div class="panels" id="panels" data-reveal></div>
+  </div>
+</section>
+
+<!-- ================= 5. PRINCIPLE ================= -->
+<section class="principle" id="principle" data-scrub>
+  <div class="wrap principle-grid">
+    <p class="principle-text" data-words>You move through life with <span class="serif">one body</span> and what you put into it shapes your health. We keep our formulas simple: <span class="u">real plant based ingredients</span>, no unhealthy fillers, no harmful synthetics, <span class="serif">no compromises.</span></p>
+    <div class="principle-bottle"><img src="assets/home/bottle-01.webp" alt="" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ================= 6. WHAT IS A HERBAL CLEANSER? ================= -->
+<section class="cleanser" id="cleanser">
+  <div class="wrap cleanser-grid">
+    <div class="cl-media" data-scrub>
+      <div class="cl-arch"><img src="assets/home/herbal_11zon.webp" alt="MYALCHE herbal cleansers" loading="lazy"></div>
+      <span class="cl-ring" aria-hidden="true"></span>
+      <span class="cl-dot" aria-hidden="true"></span>
+    </div>
+    <div class="cl-copy">
+      <h2 class="cl-title" data-words>WHAT IS A HERBAL CLEANSER?</h2>
+      <div class="steps" data-scrub>
+        <p class="step lead" data-reveal>Think of a herbal cleanser as a targeted reset for your body.</p>
+        <p class="step" data-reveal>Each formula is carefully crafted with specific herbs to support a specific need-whether that’s digestion, womb health, skin clarity or overall balance.</p>
+        <!-- the gaps after "body." and "purpose." are U+2028 and U+00A0 in the source copy, reproduced exactly -->
+        <p class="step" data-reveal>Every cleanser is intentionally made to work with a particular system in the body.&#8232; At MYALCHE we use real, plant based ingredients that have been traditionally used to support the body from within.</p>
+        <p class="step" data-reveal>No fillers, no synthetic additives-just herbs chosen with purpose. &#160;Because when you give your body exactly what it needs, it knows what to do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. REAL INGREDIENTS / TRUSTED BY THOUSANDS ================= -->
+<section class="ingredients" id="ingredients" data-scrub>
+  <div class="ing-glow" aria-hidden="true"></div>
+  <h2 class="ing-row ing-a">REAL INGREDIENTS</h2>
+  <div class="ing-stage" aria-hidden="true">
+    <img class="b1" src="assets/home/bottle-01.webp" alt="" loading="lazy">
+    <img class="b2" src="assets/home/bottle-02.webp" alt="" loading="lazy">
+  </div>
+  <h2 class="ing-row ing-b">TRUSTED BY THOUSANDS</h2>
+  <div class="ing-cta">
+    <a class="btn-pill" href="/shop/">Shop Now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= 8. WHAT CUSTOMERS ARE SAYING ================= -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <h2 class="rev-title" data-words>WHAT CUSTOMERS ARE SAYING</h2>
+      <span class="rev-count" aria-hidden="true"><b id="revNo">01</b> / 04</span>
+    </div>
+    <div class="rev-stage">
+      <div class="rev-photos" id="revPhotos" data-reveal="scale"></div>
+      <div class="rev-body" data-reveal style="--d:.15s">
+        <div class="rev-slides" id="revSlides" aria-live="polite"></div>
+        <div class="rev-nav" id="revNav"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. SEA MOSS ================= -->
+<section class="shelf seamoss" id="seamoss">
+  <div class="wrap">
+    <div class="shelf-head">
+      <div>
+        <h2 class="shelf-title" data-words>Sea <span class="serif">Moss</span></h2>
+        <p class="shelf-sub" data-reveal style="--d:.2s" id="countSeamoss"></p>
+      </div>
+      <div class="shelf-actions">
+        <a class="btn-ghost" href="/product-category/wildcrafted-sea-moss/">See all <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <button class="rail-btn" data-rail-prev="seamoss" aria-label="Previous products"><svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="rail-btn" data-rail-next="seamoss" aria-label="Next products"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <div class="rail" id="railSeamoss"></div>
+    <div class="rail-progress" data-bar="seamoss"><i></i></div>
+  </div>
+</section>
+
+<!-- ================= 10. BELIEF ================= -->
+<section class="belief" id="belief">
+  <div class="wrap">
+    <p data-words>At MYALCHE we believe that true<img class="pq-ico" src="assets/home/Eczema-soap-bar-1.webp" alt="" style="--d:.9s;--rot:-6deg">wellness begins with nature. Our products are thoughtfully crafted to<img class="pq-ico" src="assets/home/bottole.webp" alt="" style="--d:1.15s;--rot:5deg">support your body, nourish your skin and enhance your <img class="pq-ico" src="assets/home/Star-1.webp" alt="" style="--d:1.4s;--rot:-4deg">everyday lifestyle.</p>
+  </div>
+</section>
+
+<!-- ================= 11. BODY CARE ================= -->
+<section class="shelf bodycare" id="bodycare">
+  <div class="wrap">
+    <div class="shelf-head">
+      <div>
+        <h2 class="shelf-title" data-words>Body <span class="serif">Care</span></h2>
+        <p class="shelf-sub" data-reveal style="--d:.2s" id="countBodycare"></p>
+      </div>
+      <div class="shelf-actions">
+        <a class="btn-ghost" href="/product-category/body-care/">See all <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="bodygrid" id="bodyGrid"></div>
+    <div class="more-row">
+      <div class="more-meter"><i id="moreFill"></i></div>
+      <p class="more-note" id="moreNote"></p>
+      <button class="btn-pill" id="moreBtn" type="button">Show more products</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/home/main-logo.webp" alt="MYALCHE">
+        <div class="news-card" data-reveal>
+          <h3>Join our email newsletter &amp; get 10% off 🎉</h3>
+          <form class="news-field" id="newsForm">
+            <input type="email" id="newsEmail" placeholder="Enter email address..." aria-label="Email" required>
+            <button type="submit" aria-label="Submit"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only">SUBMIT</span></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick link</h4>
+        <ul><li><a href="/about/">About</a></li><li><a href="/contact-us/">Contact Us</a></li><li><a href="/refund-policy/">Refund Policy</a></li><li><a href="/shipping-policy/">Shipping Policy</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 6.5l8.5 6 8.5-6" stroke="currentColor" stroke-width="1.9"/></svg><a href="mailto:info@MYALCHE.com">info@MYALCHE.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.9"/></svg><span>P.O. BOX 90819<br>LOS ANGELES, CA 90009</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <div class="footer-social" id="footerSocial"></div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2018-2026. All Rights Reserved. MYALCHE</span>
+      <span><a href="/terms-conditions/">Terms and Conditions</a><a href="/privacy-policy/">Privacy Policy</a></span>
+    </div>
+  </div>
+  <div class="footer-mark" aria-hidden="true">MYALCHE</div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+<!-- ================= ENTRY QUIZ POPUP ================= -->
+<div class="overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+  <div class="quiz-box">
+    <button class="quiz-close" id="quizClose" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+    <div class="quiz-body">
+      <h2 id="quizTitle">What Does Your Body Need Right Now?</h2>
+      <p>Choose where you'd like to begin your wellness journey.</p>
+      <div class="quiz-options">
+        <a href="/product-category/herbal-elixirs/">A Targeted Herbal Reset</a>
+        <a href="/product-category/juices-drinks/">Juices &amp; Nourishing Drinks</a>
+        <a href="/product-category/wildcrafted-sea-moss/">Mineral-Rich Sea Moss</a>
+        <a href="/product-category/body-care/">Natural Body &amp; Skin Care</a>
+      </div>
+    </div>
+    <div class="quiz-media"><img src="assets/home/review-img-2_11zon.webp" alt="" aria-hidden="true"></div>
+  </div>
+</div>
+
+<div class="overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search products">
+  <div class="search-box">
+    <input type="search" id="searchInput" placeholder="Search for products…" autocomplete="off">
+    <div class="suggest">Popular: <span>Sea Moss</span><span>Cleanse</span><span>Body Butter</span><span>Yoni</span><span>Soap Bar</span></div>
+  </div>
+</div>
+
+<div class="overlay" id="payInfoOverlay" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
+  <div class="pay-modal-box">
+    <button class="pay-modal-close" id="payModalClose" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+    <h3 id="payModalTitle"></h3>
+    <div class="pay-modal-plans" id="payModalPlans"></div>
+    <p class="pay-modal-note" id="payModalNote"></p>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+
+/* =========================================================
+   MYALCHE — homepage. All copy is reproduced from the live
+   site verbatim; this file only changes how it is presented.
+   ========================================================= */
+
+/* ---------- product data ---------- */
+const IMG = 'assets/home/';
+
+const PRODUCTS = {
+  start: [
+    {meta:'Soursop Bitter Cleanser | 16 oz.', name:'Blood Purifier', price:54.99, img:'Soursop-Bitter-Cleanser-16-oz.webp'},
+    {meta:'Parasite Cleanse | 16 oz.', name:'Eliminate Parasites + Harmful Organisms', price:54.99, img:'Parasite-Cleanse-16-oz.webp'},
+    {meta:'Lymphatic Cleanse | 16 oz.', name:'Promote Lymphatic Drainage | Reduce Swelling', price:50.99, img:'Lymphatic-Cleanse-16-oz.webp'},
+    {meta:'Blood Pressure Cleanser | 16 oz.', name:'Support Healthy Arteries and Blood Flow', price:52.99, img:'Blood-Pressure-Cleanser-16-oz.webp'},
+    {meta:'7 Day Juice Cleanse', name:'Detox Support', price:129.99, img:'7-Day-Juice-Cleanse.webp'}
+  ],
+  seamoss: [
+    {meta:'Watermelon Sea Moss Gel | 16 oz.', name:'', price:34.99, img:'Watermelon-Sea-Moss-Gel.webp'},
+    {meta:'Chili Lime Mango Sea Moss Gel | 16 oz.', name:'Lime | Cayenne | Mango', price:34.99, img:'Chili-Lime-Mango-Sea-Moss-Gel.webp'},
+    {meta:'Heart Blood Cleanser Sea Moss Gel | 16 oz.', name:'Cherry | Hawthorn Berry | Raspberry | Pomegranate', price:34.99, img:'Heart-Blood-Cleanser-Sea-Moss-Gel.webp'},
+    {meta:'Soursop Sea Moss Gel | 16 oz.', name:'Soursop | Pear | Apple', price:34.99, img:'Soursop-Sea-Moss-Gel.webp'},
+    {meta:'Pineapple Sea Moss Gel | 16 oz.', name:'Pineapple | Turmeric | Ginger', price:34.99, img:'Pineapple-Sea-Moss-Gel.webp'},
+    {meta:'Strawberry Lemonade Sea Moss Gel | 16 oz.', name:'Strawberry | Lemon', price:34.99, img:'Strawberry-Lemonade-Sea-Moss-Gel.webp'},
+    {meta:'Tropical Sea Moss Gel | 16 oz.', name:'Dragonfruit | Passionfruit | Mango', price:34.99, img:'Tropical-Sea-Moss-Gel.webp'},
+    {meta:'Blueberry Sea Moss Gel | 16 oz.', name:'Blueberry | Blue Spirulina', price:34.99, img:'Blueberry-Sea-Moss-Gel.webp'},
+    {meta:'Sea Moss Gel | 7 oz.', name:'Purple / Gold Chondrus Crispus Sea Moss Gel', price:24.99, img:'Sea-Moss-Gel-7oz.webp'},
+    {meta:'Gold Chondrus Crispus Sea Moss | 8 oz.', name:'Wildcrafted', price:78.98, img:'Gold-Chondrus-Crispus-Sea-Moss.webp'},
+    {meta:'Purple Chondrus Crispus Sea Moss | 8 oz.', name:'Wildcrafted', price:78.98, img:'Purple-Chondrus-Crispus-Sea-Moss.webp'},
+    {meta:'Gold Gracilaria Sea Moss | 8 oz.', name:'Wildcrafted', price:78.98, img:'Gold-Gracilaria-Sea-Moss.png'},
+    {meta:'Purple Gracilaria Sea Moss | 8 oz.', name:'Wildcrafted', price:78.98, img:'Purple-Gracilaria-Sea-Moss.webp'},
+    {meta:'Purple / Gold Chondrus Crispus Sea Moss | 8 oz.', name:'Wildcrafted', price:78.98, img:'Purple-Gold-Chondrus-Crispus-Sea-Moss.png'},
+    {meta:'Purple Caribbean Sea Moss | 8 oz.', name:'Abundant in Minerals', price:49.99, img:'Purple-Caribbean-Sea-Moss.webp'},
+    {meta:'Sea Moss Powder | 8 oz.', name:'Wildcrafted', price:59.99, img:'Sea-Moss-Powder.webp'}
+  ],
+  bodycare: [
+    {meta:'Yoni Wash | 8 oz. for Women', name:'pH / Hormonal Balance / Odor Block', price:16.99, img:'Yoni-Wash.webp'},
+    {meta:'Yoni Steam Seat', name:'Womb Detox Pot', price:45.99, img:'Yoni-Steam-Seat.webp'},
+    {meta:'Yoni Steam Herbs | 8 oz.', name:'Vaginal Detox / Womb Restoration', price:19.99, img:'Yoni-Steam-Herbs.webp'},
+    {meta:'Whitening Herbal Toothpaste | 2 oz.', name:'Remove Stains, Reduce Plaque, Promote Oral Health', price:14.99, img:'Whitening-Herbal-Toothpaste.webp'},
+    {meta:'Watermelon Body Scrub | 8 oz.', name:'Buff Away Dryness, Smooth Rough Texture, Restore Glow', price:19.99, img:'Watermelon-Body-Scrub.webp'},
+    {meta:'Watermelon | Body Butter', name:'Reduce Hyperpigmentation', price:19.99, img:'Watermelon-Body-Butter.webp'},
+    {meta:'Vaginal Detox Soap Bar', name:'STI | Vaginal Odor Relief', price:12.99, img:'Vaginal-Detox-Soap-Bar.webp'},
+    {meta:'Turmeric Brightening Soap Bar', name:'Fade Face and Body Acne Scars', price:null, img:'Turmeric-Brightening-Soap-Bar.webp'},
+    {meta:'Tropical Kiwi Body Scrub | 8 oz.', name:'Exfoliate and Refresh with a Tropical Twist', price:22.99, img:'Tropical-Kiwi-Body-Scrub.webp'},
+    {meta:'Total Wellness Bundle', name:'Nourish Your Entire Body', price:454.00, img:'Total-Wellness-Bundle.webp'},
+    {meta:'Tea Tree Oil | 2 oz.', name:'Body Protection', price:25.99, img:'Tea-Tree-Oil.webp'},
+    {meta:'Soursop Fruit Bundle', name:'Power Cell Rejuvenator', price:399.99, img:'Soursop-Fruit-Bundle.webp'},
+    {meta:'Soursop | Coconut Milk Soap Bar', name:'Face and Body Cleanser', price:11.99, img:'Soursop-Coconut-Milk-Soap-Bar.webp'},
+    {meta:'Skin Repair Face and Body Oil | 4 oz.', name:'Correct All Problematic Skin', price:39.99, img:'Skin-Repair-Face-Body-Oil.webp'},
+    {meta:'Skin Cleanser | 16 oz.', name:'Internal Detox for External Clarity', price:50.99, img:'Skin-Cleanser.webp'},
+    {meta:'Sea Moss Soap Bar', name:'Skin Loving Properties', price:12.99, img:'Sea-Moss-Soap-Bar.webp'},
+    {meta:'Pomegranate Vanilla Body Butter', name:'Collagen and Skin Rejuvenation', price:19.99, img:'Pomegranate-Vanilla-Body-Butter.webp'},
+    {meta:'Pomegranate Rose Body Wash | 8 oz.', name:'Gentle Exfoliating Wash', price:16.99, img:'Pomegranate-Rose-Body-Wash.png'},
+    {meta:'Pomegranate Rose Body Scrub | 8 oz.', name:'Exfoliates and Revitalizes', price:19.99, img:'Pomegranate-Rose-Body-Scrub.webp'},
+    {meta:'Pecan | Body Butter', name:'Soft Glowing Skin', price:19.99, img:'Pecan-Body-Butter.png'},
+    {meta:'Peach Flower | Body Butter', name:'Feminine | Vibrant | Sweet', price:19.99, img:'Peach-Flower-Body-Butter.png'},
+    {meta:'Nourishing Facial Serum | 2 Fl Oz.', name:'Nutrient Restoring Skin Therapy', price:29.99, img:'Nourishing-Facial-Serum.webp'},
+    {meta:'Mango Body Butter', name:'Dry, Damaged & Aging Skin', price:19.99, img:'Mango-Body-Butter.png'},
+    {meta:'Lemongrass Sweet Orange | Body Butter', name:'Skin Correcting', price:19.99, img:'Lemongrass-Sweet-Orange-Body-Butter.png'},
+    {meta:'Lemon Poppy Soap Bar', name:'Energizing Power of Citrus', price:7.99, img:'Lemon-Poppy-Soap-Bar.webp'},
+    {meta:'Lemon Lavender Body Wash | 8 oz.', name:'', price:13.99, img:'Lemon-Lavender-Body-Wash.png'},
+    {meta:'LED Red Light Therapy Face Mask', name:'Reduce Acne, Smooth Fine Lines, Brighten Skin Tone', price:79.99, img:'LED-Red-Light-Therapy-Face-Mask.webp'},
+    {meta:'Jade Spa Cooling Mask', name:'Soothe Tired Skin, Reduce Swelling, Lock In Moisture', price:35.99, was:39.99, img:'Jade-Spa-Cooling-Mask.webp'},
+    {meta:'HIS Body Butter', name:'Masculine & Earthy', price:19.99, img:'HIS-Body-Butter.png'},
+    {meta:'Herbal Toothpaste and Mouthwash Bundle', name:'Healthy Oral Health', price:19.99, img:'Herbal-Toothpaste-Mouthwash-Bundle.webp'},
+    {meta:'Herbal Toothpaste | 2 oz.', name:'Fresh and Clean Mouth', price:12.99, img:'Herbal-Toothpaste.png'},
+    {meta:'Herbal Mouthwash | 8 oz.', name:'Fresh Breath', price:14.99, img:'Herbal-Mouthwash.webp'},
+    {meta:'Herbal Hair Oil | 4 oz.', name:'Improves Scalp Health', price:24.99, img:'Herbal-Hair-Oil.png'},
+    {meta:'Herb Garden | Body Butter', name:'Fresh | Earthy | Herbal', price:19.99, img:'Herb-Garden-Body-Butter.png'},
+    {meta:'Hair Growth Oil | 4 fl oz.', name:'Healthy Hair Growth', price:20.99, img:'Hair-Growth-Oil.webp'},
+    {meta:'Gua Sha | Skincare Tool', name:'Promotes Lymphatic Drainage', price:24.99, img:'Gua-Sha.webp'},
+    {meta:'Grape Lavender | Body Butter', name:'', price:19.99, img:'Grape-Lavender-Body-Butter.png'},
+    {meta:'Ginger Key Lime Deodorant Stick', name:'Neutralize Odor, Soothe Skin, Smell Fresh Naturally', price:9.99, img:'Ginger-Key-Lime-Deodorant-Stick.webp'},
+    {meta:'Ginger Key Lime Body Butter', name:'Skin Fungal Infections and Scarring', price:19.99, img:'Ginger-Key-Lime-Body-Butter.png'},
+    {meta:'Fruit Sorbet Body Butter', name:'Deep Hydration for Dry or Dull Skin', price:22.99, img:'Fruit-Sorbet-Body-Butter.webp'},
+    {meta:'Fresh Bliss | Body Butter', name:'Warm | Teakwood', price:19.99, img:'Fresh-Bliss-Body-Butter.png'},
+    {meta:'Frequency Body Butter', name:'Rosemary and Peppermint', price:19.99, img:'Frequency-Body-Butter.png'},
+    {meta:'Exfoliating Sisal Bath Mitt', name:'Revitalize Your Skin Naturally', price:11.99, img:'Exfoliating-Sisal-Bath-Mitt.webp'},
+    {meta:'Exfoliating Body Brush', name:'Deep Cleanse Brush', price:14.99, img:'Exfoliating-Body-Brush.webp'},
+    {meta:'Exfoliating Bath | Shower Gloves', name:'Body Wash Gloves', price:6.99, img:'Exfoliating-Bath-Shower-Gloves.webp'},
+    {meta:'Eucalyptus Coconut Bar', name:'Hydrate, Reduce Acne', price:8.99, img:'Eucalyptus-Coconut-Bar.webp'},
+    {meta:'Energy | Roll On', name:'Lemongrass Sweet Orange', price:15.99, img:'Energy-Roll-On.webp'},
+    {meta:'Eczema Skin Repair Soap Bar', name:'Eczema, Psoriasis, Mild Acne Scars', price:10.99, img:'Eczema-Skin-Repair-Soap-Bar.webp'},
+    {meta:'Dragon Fruit Body Wash | 8 oz.', name:'Vibrant, Fruity Scent', price:13.99, img:'Dragon-Fruit-Body-Wash.webp'},
+    {meta:'Cucumber Mint Body Butter', name:'Relaxing Spa', price:19.99, img:'Cucumber-Mint-Body-Butter.png'},
+    {meta:'Coffee Shea Butter Soap Bar', name:'', price:7.99, img:'Coffee-Shea-Butter-Soap-Bar.webp'},
+    {meta:'Coffee Body Scrub | 8 oz.', name:'Exfoliates and Polishes', price:19.99, img:'Coffee-Body-Scrub.webp'},
+    {meta:'Coffee Body Butter', name:'Soft, Smooth, Glowing', price:19.99, img:'Coffee-Body-Butter.png'},
+    {meta:'Cloves | 8 oz.', name:'Fresh Breath / Cavity Prevention', price:17.99, img:'Cloves.webp'},
+    {meta:'Cinnamon Clove Herbal Toothpaste | 2 oz.', name:'Fresh and Clean Mouth', price:14.99, img:'Herbal-Toothpaste.png'},
+    {meta:'Cinnamon Clove Deodorant Stick', name:'Neutralize Odor, Soothe Skin, Smell Fresh Naturally', price:9.99, img:'Cinnamon-Clove-Deodorant-Stick.webp'},
+    {meta:'Brightening Turmeric Body Wash | 8 oz.', name:'Fade Face and Body Acne Scars', price:13.99, img:'Brightening-Turmeric-Body-Wash.webp'},
+    {meta:'Brightening Turmeric Body Scrub | 8 oz.', name:'Fade Dark Spots and Discoloration', price:16.99, img:'Brightening-Turmeric-Body-Scrub.webp'},
+    {meta:'Body Glow Oil | 4 oz.', name:'Enhances Natural Glow', price:19.99, img:'Body-Glow-Oil.webp'},
+    {meta:'Bath Sea Sponge', name:'Eco Friendly | Luxurious Lather', price:9.99, img:'Bath-Sea-Sponge.webp'},
+    {meta:'Batana Oil | 4 oz.', name:'Healthy Skin', price:49.99, img:'grid-img-3_11zon.webp'},
+    {meta:'Anxiety Relief | Roll On', name:'Peppermint Eucalyptus', price:15.99, img:'Anxiety-Relief-Roll-On.webp'},
+    {meta:'African Black Soap Liquid Wash | 8 oz.', name:'Eczema / Psoriasis Relief Wash', price:16.99, img:'African-Black-Soap-Liquid-Wash.webp'},
+    {meta:'African Black Soap Bar', name:'Breakouts and Hyperpigmentation', price:10.99, img:'African-Black-Soap-Bar.webp'},
+    {meta:'African Black Body Scrub | 8 oz.', name:'Fade Dark Spots', price:22.99, img:'African-Black-Body-Scrub.webp'},
+    {meta:'Activated Charcoal Tea Tree Body Scrub | 8 oz.', name:'Cleanse Pores', price:19.99, img:'Activated-Charcoal-Tea-Tree-Body-Scrub.webp'}
+  ]
+};
+
+const REVIEWS = [
+  {text:'“This is my second bottle of the Fibroid Cleanser. I originally got it to help with period pain and it definitely did. My cramps were way lighter and my cycle went from 6 days to 4. I’m starting my next 30 days now to see how much more progress I can make!”', name:'Janelle M. - Atlanta, GA', img:'review-img-1_11zon.webp'},
+  {text:'“I got this for myself at first and after about a week I noticed a real difference in performance and energy. I let my wife try it twice and THAT was all the confirmation we needed. This stuff works for both men and women, so be careful… you might end up having too much fun if you know what i mean.”', name:'Charles R. - Houston, TX', img:'review-img-2_11zon.webp'},
+  {text:'“I wasn’t sure where my bloated, pregnant looking belly was coming from because I’m a small frame person but my stomach always stuck out. About two weeks in, my stomach has gone down a lot. I didn’t even change my diet that much. I’m going to fast till I finish this bottle to get even faster results.”', name:'Arielle S. Lansing, IL', img:'review-img-3_11zon.webp'},
+  {text:'“I paired the Candida Cleanser with the Kidney Cleanser because I kept getting recurring yeast infections. I’ve already noticed a difference less irritation and way less bloating. I should prob do another bottle but I do feel like things are balancing out again.”', name:'Brianna L.- Greensboro, NC', img:'review-img-4_11zon.webp'}
+];
+
+/* ---------- helpers ---------- */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const money = n => '$' + Number(n).toFixed(2);
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
+const DESKTOP = window.matchMedia('(min-width: 981px)');
+const STAR = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.8L12 2z"/></svg>';
+
+/* ---------- social icons (one source, two places) ---------- */
+const SOCIAL = [
+  ['fb','Facebook','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>'],
+  ['tw','X','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.5 3h6.2l4.2 5.6L17.5 3z"/></svg>'],
+  ['ig','Instagram','<svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>'],
+  ['yt','YouTube','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>'],
+  ['th','Threads','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c5.5 0 9 3.6 9 10s-3.5 10-9 10-9-3.6-9-10S6.5 2 12 2zm.4 5.6c-2.6 0-4 1.6-4.2 3.9l1.9.2c.1-1.5.9-2.3 2.3-2.3 1.3 0 2 .6 2.1 1.7-3.6.3-5.6 1.4-5.6 3.6 0 1.7 1.3 2.9 3.2 2.9 1.5 0 2.5-.6 3.1-1.6l.2 1.4h1.7v-5.6c0-2.7-1.4-4.2-4.7-4.2z"/></svg>'],
+  ['pin','Pinterest','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-2.3 3.1-5 0-2.1-1.4-3.6-4-3.6a4.5 4.5 0 0 0-4.7 4.5c0 .9.3 1.5.8 2 .1.1.1.2.1.4l-.2.9c0 .2-.2.3-.4.2-1.2-.5-1.8-1.8-1.8-3.4 0-2.5 2.1-5.5 6.3-5.5 3.4 0 5.6 2.4 5.6 5 0 3.4-1.9 6-4.7 6-1 0-1.9-.5-2.2-1.1l-.6 2.4c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2z"/></svg>'],
+  ['sn','Snapchat','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c3 0 4.9 2.2 4.9 5.2 0 .8-.1 1.6-.1 2 .3.2.7.2 1 .1.6-.2 1.2.1 1.3.6.1.5-.2.9-.9 1.2-.6.3-1.4.5-1.5.9-.1.4.9 2.3 3 3 .5.2.5.7 0 .9-.6.3-1.6.4-1.8.7-.1.2 0 .6-.2.8-.2.2-.7.1-1.3.1-.7 0-1.5.1-2.3.7-.7.5-1.3 1-2.1 1s-1.4-.5-2.1-1c-.8-.6-1.6-.7-2.3-.7-.6 0-1.1.1-1.3-.1-.2-.2-.1-.6-.2-.8-.2-.3-1.2-.4-1.8-.7-.5-.2-.5-.7 0-.9 2.1-.7 3.1-2.6 3-3-.1-.4-.9-.6-1.5-.9-.7-.3-1-.7-.9-1.2.1-.5.7-.8 1.3-.6.3.1.7.1 1-.1 0-.4-.1-1.2-.1-2 0-3 1.9-5.2 4.9-5.2z"/></svg>'],
+  ['tt','TikTok','<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.1 1.7 3.5 3.8 3.7v2.7c-1.4.1-2.7-.3-3.9-1v5.9c0 4.2-3.6 7-7.3 5.7-2.3-.8-3.8-2.9-3.8-5.4 0-3.1 2.6-5.6 5.7-5.5v2.8c-.4-.1-.8-.1-1.2-.1-1.4.2-2.4 1.5-2.1 2.9.2 1.1 1.2 1.9 2.3 1.9 1.4 0 2.6-1.1 2.6-2.5V3h3.9z"/></svg>']
+];
+const SOCIAL_URLS = {
+  fb:'https://www.facebook.com/MYALCHE', tw:'https://x.com/MYALCHE', ig:'https://www.instagram.com/MYALCHE',
+  yt:'https://www.youtube.com/MYALCHE', th:'https://www.threads.com/@MYALCHE', pin:'https://www.pinterest.com/MYALCHE',
+  sn:'https://t.snapchat.com/o0X88bMC', tt:'https://www.tiktok.com/@MYALCHE'
+};
+$('#socialRail').innerHTML = SOCIAL.map(([c, n, s]) => '<a class="' + c + '" href="' + SOCIAL_URLS[c] + '" target="_blank" rel="noopener" aria-label="' + n + '">' + s + '</a>').join('');
+$('#footerSocial').innerHTML = SOCIAL.map(([c, n, s]) => '<a href="' + SOCIAL_URLS[c] + '" target="_blank" rel="noopener" aria-label="' + n + '">' + s + '</a>').join('');
+$('#heroStars').innerHTML = STAR.repeat(5);
+
+/* ---------- toast ---------- */
+const toastEl = $('#toast');
+let toastTimer;
+function toast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+}
+
+/* ---------- cart (sessionStorage, shared with shop / PDP / cart pages) ---------- */
+const CART_KEY = 'myalche_cart';
+function getCart(){ try { return JSON.parse(sessionStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
+function saveCart(items){ sessionStorage.setItem(CART_KEY, JSON.stringify(items)); }
+function cartItemId(t){ return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+function refreshCartPill(){
+  const cart = getCart();
+  $('#cartBadge').textContent = cart.reduce((n, i) => n + (i.qty || 1), 0);
+  $('#cartTotal').textContent = money(cart.reduce((n, i) => n + (i.price || 0) * (i.qty || 1), 0));
+}
+function addCartItem(item){
+  const cart = getCart();
+  const ex = cart.find(i => i.id === item.id);
+  if (ex) ex.qty += item.qty || 1; else cart.push({ ...item, qty: item.qty || 1 });
+  saveCart(cart);
+  refreshCartPill();
+}
+
+/* ---------- BNPL line shown on every priced product ---------- */
+const AFTERPAY_IMG = '<img class="afterpay-badge" src="assets/afterpay-logo-lockup.svg" alt="Afterpay">';
+const AFFIRM_IMG   = '<img class="affirm-logo" src="assets/affirm-logo-dark-transparent.png" alt="Affirm">';
+function buildCardPayHtml(price){
+  if (!price) return '';
+  const each = (price / 4).toFixed(2);
+  let html = '<div class="pay-line"><span>or 4 payments of $' + each + ' with</span>' +
+    '<span class="pay-brand-inline">' + AFTERPAY_IMG +
+    '<button type="button" class="pay-info" data-pay-modal="afterpay" data-price="' + price + '" aria-label="Afterpay info">i</button></span></div>';
+  if (price >= 50){
+    html += '<div class="pay-line">Pay with ' + AFFIRM_IMG +
+      ' <span class="pay-learn" data-pay-modal="affirm" data-price="' + price + '">Learn more</span></div>';
+  }
+  return html;
+}
+
+/* ---------- product markup ---------- */
+const ICON_HEART = '<svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.6-7-9.2A4 4 0 0 1 12 8a4 4 0 0 1 7-1.2c0 4.6-7 13.2-7 13.2z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>';
+const ICON_EYE   = '<svg viewBox="0 0 24 24" fill="none"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.9"/></svg>';
+
+function priceHtml(p){
+  return (p.was ? '<s>' + money(p.was) + '</s>' : '') + money(p.price);
+}
+
+/* standard card — Sea Moss rail and Body Care grid */
+function cardHtml(p){
+  const priced = p.price != null;
+  return '<article class="pc">' +
+    '<div class="pc-media"><img src="' + IMG + esc(p.img) + '" alt="' + esc(p.meta) + '" loading="lazy" draggable="false">' +
+      '<div class="pc-quick">' +
+        '<button type="button" class="qbtn js-wish" aria-label="Save to wishlist">' + ICON_HEART + '</button>' +
+        '<button type="button" class="qbtn js-view" aria-label="Quick view">' + ICON_EYE + '</button>' +
+      '</div></div>' +
+    '<div class="pc-body">' +
+      '<h3 class="pc-title">' + esc(p.meta) + '</h3>' +
+      (p.name ? '<p class="pc-tag">' + esc(p.name) + '</p>' : '') +
+      (priced ? '<div class="pc-buy"><span class="pc-price">' + priceHtml(p) + '</span>' +
+                '<button type="button" class="pc-add js-add">Add to Cart</button></div>' +
+                '<div class="card-pay">' + buildCardPayHtml(p.price) + '</div>' : '') +
+    '</div></article>';
+}
+
+/* expanding panel — Where To Start */
+function panelHtml(p, i){
+  return '<article class="panel">' +
+    '<img class="panel-img" src="' + IMG + esc(p.img) + '" alt="' + esc(p.meta) + '" loading="lazy" draggable="false">' +
+    '<span class="panel-no" aria-hidden="true">0' + (i + 1) + '</span>' +
+    '<span class="panel-label" aria-hidden="true">' + esc(p.meta) + '</span>' +
+    '<div class="panel-info">' +
+      '<h3 class="panel-title">' + esc(p.meta) + '</h3>' +
+      (p.name ? '<p class="panel-tag">' + esc(p.name) + '</p>' : '') +
+      '<div class="panel-buy"><span class="panel-price">' + priceHtml(p) + '</span>' +
+        '<button type="button" class="pc-add js-add">Add to Cart</button></div>' +
+      '<div class="card-pay">' + buildCardPayHtml(p.price) + '</div>' +
+    '</div></article>';
+}
+
+let wishCount = 0;
+function wireProduct(el, p){
+  const add = $('.js-add', el);
+  if (add) add.addEventListener('click', e => {
+    e.stopPropagation();
+    addCartItem({ id: cartItemId(p.meta), title: p.meta, price: p.price || 0, qty: 1, image: IMG + p.img, desc: p.name || '' });
+    add.classList.add('added'); add.textContent = '✓ Added';
+    setTimeout(() => { add.classList.remove('added'); add.textContent = 'Add to Cart'; }, 1400);
+    toast(p.meta + ' added to cart');
+  });
+  const wish = $('.js-wish', el);
+  if (wish) wish.addEventListener('click', e => {
+    e.stopPropagation();
+    const on = wish.classList.toggle('active');
+    wishCount += on ? 1 : -1;
+    $('#wishBadge').textContent = wishCount;
+    toast(on ? 'Saved to wishlist' : 'Removed from wishlist');
+  });
+  const view = $('.js-view', el);
+  if (view) view.addEventListener('click', e => {
+    e.stopPropagation();
+    sessionStorage.setItem('myalche_pdp', JSON.stringify({ title: p.meta, tag: p.name || '', price: p.price || 0, image: IMG + p.img, desc: p.name || '' }));
+    window.location.href = '/shop/';
+  });
+}
+
+/* ---------- render the three product areas ---------- */
+$('#panels').innerHTML = PRODUCTS.start.map(panelHtml).join('');
+$$('#panels .panel').forEach((el, i) => wireProduct(el, PRODUCTS.start[i]));
+
+$('#railSeamoss').innerHTML = PRODUCTS.seamoss.map(cardHtml).join('');
+$$('#railSeamoss .pc').forEach((el, i) => wireProduct(el, PRODUCTS.seamoss[i]));
+
+$('#bodyGrid').innerHTML = PRODUCTS.bodycare.map(cardHtml).join('');
+$$('#bodyGrid .pc').forEach((el, i) => wireProduct(el, PRODUCTS.bodycare[i]));
+
+$('#countSeamoss').textContent  = PRODUCTS.seamoss.length + ' products';
+$('#countBodycare').textContent = PRODUCTS.bodycare.length + ' products';
+
+/* ---------- Where To Start: expanding panels ---------- */
+const panels = $$('#panels .panel');
+function activatePanel(i){
+  panels.forEach((p, j) => {
+    const on = j === i;
+    p.classList.toggle('is-active', on);
+    const info = $('.panel-info', p);
+    if (info) info.inert = DESKTOP.matches ? !on : false;
+  });
+}
+panels.forEach((p, i) => {
+  p.addEventListener('mouseenter', () => { if (DESKTOP.matches) activatePanel(i); });
+  p.addEventListener('focusin',    () => { if (DESKTOP.matches) activatePanel(i); });
+  p.addEventListener('click',      () => { if (DESKTOP.matches) activatePanel(i); });
+});
+activatePanel(0);
+DESKTOP.addEventListener('change', () => activatePanel(Math.max(0, panels.findIndex(p => p.classList.contains('is-active')))));
+
+/* ---------- reviews: featured slider ---------- */
+(function(){
+  const photos = $('#revPhotos'), slides = $('#revSlides'), nav = $('#revNav');
+  photos.innerHTML = REVIEWS.map((r, i) => '<div class="rev-ph' + (i ? '' : ' is-active') + '"><img src="' + IMG + r.img + '" alt="" loading="lazy"></div>').join('');
+  slides.innerHTML = REVIEWS.map((r, i) =>
+    '<div class="rev-slide' + (i ? '' : ' is-active') + '" aria-hidden="' + (i ? 'true' : 'false') + '">' +
+      '<div class="rev-stars">' + STAR.repeat(5) + '</div>' +
+      '<p class="rev-quote">' + esc(r.text) + '</p>' +
+      '<p class="rev-name">' + esc(r.name) + '</p></div>').join('');
+  nav.innerHTML = REVIEWS.map((r, i) =>
+    '<button type="button" class="rev-thumb' + (i ? '' : ' is-active') + '" aria-label="Show review ' + (i + 1) + '"><img src="' + IMG + r.img + '" alt=""></button>').join('') +
+    '<div class="rev-bar"><i></i></div>';
+
+  const ph = $$('.rev-ph', photos), sl = $$('.rev-slide', slides), th = $$('.rev-thumb', nav), bar = $('.rev-bar i', nav), no = $('#revNo');
+  const DUR = 8000;
+  let cur = 0, timer = null, inView = false, hover = false;
+
+  function runBar(){
+    bar.classList.remove('run'); void bar.offsetWidth;
+    if (!REDUCED.matches) { bar.style.setProperty('--dur', DUR + 'ms'); bar.classList.add('run'); }
+  }
+  function go(i){
+    cur = (i + REVIEWS.length) % REVIEWS.length;
+    ph.forEach((e, j) => e.classList.toggle('is-active', j === cur));
+    sl.forEach((e, j) => { e.classList.toggle('is-active', j === cur); e.setAttribute('aria-hidden', j === cur ? 'false' : 'true'); });
+    th.forEach((e, j) => e.classList.toggle('is-active', j === cur));
+    no.textContent = '0' + (cur + 1);
+    schedule();
+  }
+  function schedule(){
+    clearTimeout(timer); runBar();
+    if (REDUCED.matches || !inView || hover) { bar.classList.remove('run'); return; }
+    timer = setTimeout(() => go(cur + 1), DUR);
+  }
+  th.forEach((e, j) => e.addEventListener('click', () => go(j)));
+  const stage = $('.rev-stage');
+  stage.addEventListener('mouseenter', () => { hover = true; schedule(); });
+  stage.addEventListener('mouseleave', () => { hover = false; schedule(); });
+  new IntersectionObserver(es => { inView = es[0].isIntersecting; schedule(); }, { threshold: .35 }).observe(stage);
+})();
+
+/* ---------- rails: drag, arrows, progress, in-card parallax ---------- */
+function setupRail(rail, key){
+  const bar  = $('[data-bar="' + key + '"] i');
+  const prev = $('[data-rail-prev="' + key + '"]');
+  const next = $('[data-rail-next="' + key + '"]');
+  const cards = $$('.pc', rail);
+
+  function sync(){
+    const max = rail.scrollWidth - rail.clientWidth;
+    const ratio = max > 0 ? rail.scrollLeft / max : 0;
+    if (bar) bar.style.transform = 'scaleX(' + (0.07 + 0.93 * ratio).toFixed(3) + ')';
+    if (prev) prev.disabled = rail.scrollLeft <= 8;
+    if (next) next.disabled = rail.scrollLeft >= max - 8;
+    const mid = rail.scrollLeft + rail.clientWidth / 2;
+    cards.forEach(c => {
+      const off = (c.offsetLeft + c.offsetWidth / 2 - mid) / rail.clientWidth;      // -1 … 1
+      c.style.setProperty('--ix', (off * -7).toFixed(2));
+    });
+  }
+  rail.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync, { passive: true });
+  const step = () => (cards[0] ? cards[0].offsetWidth + 22 : 300) * 2;
+  if (prev) prev.addEventListener('click', () => rail.scrollBy({ left: -step(), behavior: 'smooth' }));
+  if (next) next.addEventListener('click', () => rail.scrollBy({ left:  step(), behavior: 'smooth' }));
+
+  /* mouse drag */
+  let down = false, sx = 0, sl = 0, moved = 0;
+  rail.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    down = true; moved = 0; sx = e.clientX; sl = rail.scrollLeft;
+  });
+  window.addEventListener('pointermove', e => {
+    if (!down) return;
+    const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx));
+    if (moved > 6) rail.classList.add('is-dragging');
+    rail.scrollLeft = sl - dx;
+  });
+  window.addEventListener('pointerup', () => { if (!down) return; down = false; setTimeout(() => rail.classList.remove('is-dragging'), 0); });
+  sync();
+}
+setupRail($('#railSeamoss'), 'seamoss');
+
+/* ---------- Body Care: grid with progressive reveal ---------- */
+(function(){
+  const items = $$('#bodyGrid .pc');
+  const INITIAL = 8, STEP = 12;
+  let shown = INITIAL;
+  const fill = $('#moreFill'), note = $('#moreNote'), btn = $('#moreBtn');
+  function paint(){
+    items.forEach((el, i) => el.classList.toggle('is-hidden', i >= shown));
+    fill.style.width = (shown / items.length * 100) + '%';
+    note.textContent = shown >= items.length ? 'All ' + items.length + ' products shown' : 'Showing ' + shown + ' of ' + items.length;
+    btn.style.display = shown >= items.length ? 'none' : '';
+    const left = items.length - shown;
+    btn.textContent = 'Show ' + Math.min(STEP, left) + ' more';
+  }
+  btn.addEventListener('click', () => {
+    const from = shown;
+    shown = Math.min(items.length, shown + STEP);
+    items.slice(from, shown).forEach((el, k) => {
+      el.classList.remove('is-hidden');
+      el.classList.remove('pop'); void el.offsetWidth;
+      el.style.setProperty('--d', (k * 0.05).toFixed(2) + 's');
+      el.classList.add('pop');
+    });
+    paint();
+  });
+  paint();
+})();
+
+/* ---------- marquee: extend until it overfills, then clone for a seamless loop ---------- */
+(function(){
+  const track = $('#marqTrack'), g = $('.marquee-group', track);
+  const base = [...g.children];
+  let guard = 0;
+  while (g.scrollWidth < window.innerWidth * 1.15 && guard++ < 10){
+    base.forEach(n => { const c = n.cloneNode(true); c.setAttribute('aria-hidden', 'true'); g.appendChild(c); });
+  }
+  const g2 = g.cloneNode(true); g2.setAttribute('aria-hidden', 'true'); track.appendChild(g2);
+})();
+
+/* =========================================================
+   MOTION ENGINE
+   One frame loop writes scroll progress into CSS custom
+   properties; the stylesheet turns them into movement.
+     --hp   hero scroll progress (0 → 1)
+     --p    how far an element has travelled through the viewport
+     --sp   progress through a pinned (sticky) track
+   Entrances use IntersectionObserver plus a sweep, so fast
+   scrolling can never leave content hidden.
+   ========================================================= */
+
+/* masked word-rise: splits text into words without touching the copy */
+function splitWords(el){
+  if (el.dataset.split) return;
+  let i = 0;
+  const walk = (src, dst) => {
+    src.childNodes.forEach(ch => {
+      if (ch.nodeType === 3){
+        ch.textContent.split(/(\s+)/).forEach(tok => {
+          if (!tok) return;
+          if (/^\s+$/.test(tok)) { dst.appendChild(document.createTextNode(tok)); return; }
+          const w = document.createElement('span'); w.className = 'wm';
+          const inner = document.createElement('i'); inner.textContent = tok;
+          inner.style.setProperty('--d', (Math.min(i++, 38) * 0.045).toFixed(3) + 's');
+          w.appendChild(inner); dst.appendChild(w);
+        });
+      } else if (ch.nodeType === 1){
+        const c = ch.cloneNode(false); dst.appendChild(c);
+        if (ch.tagName !== 'IMG') walk(ch, c);
+      }
+    });
+  };
+  const frag = document.createDocumentFragment();
+  walk(el, frag);
+  el.textContent = ''; el.appendChild(frag); el.dataset.split = '1';
+}
+if (!REDUCED.matches) $$('[data-words]').forEach(splitWords);
+
+/* count-up lands on the exact printed string */
+function countUp(el){
+  const target = parseInt(el.dataset.countup, 10);
+  if (!target || REDUCED.matches || el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const final = el.textContent, t0 = performance.now(), dur = 1800;
+  const step = now => {
+    const p = clamp((now - t0) / dur, 0, 1), e = 1 - Math.pow(1 - p, 4);
+    if (p < 1){ el.textContent = Math.round(target * e).toLocaleString('en-US'); requestAnimationFrame(step); }
+    else el.textContent = final;
+  };
+  requestAnimationFrame(step);
+}
+
+/* entrance reveal */
+const pending = new Set();
+function reveal(el){
+  if (el.classList.contains('is-in')) { pending.delete(el); return; }
+  el.classList.add('is-in'); pending.delete(el); io.unobserve(el);
+}
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) reveal(e.target); }),
+  { rootMargin: '0px 0px -11% 0px', threshold: 0.06 });
+function watch(el){ pending.add(el); io.observe(el); }
+$$('[data-reveal],[data-words],.collage,.cl-media').forEach(watch);
+
+/* sweep: reveals anything the viewport has already reached, even if the observer missed it */
+function sweep(){
+  if (!pending.size) return;
+  const vh = innerHeight;
+  [...pending].forEach(el => { if (el.getBoundingClientRect().top < vh * 0.94) reveal(el); });
+}
+
+/* hero */
+const hero = $('#hero');
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  hero.classList.add('is-ready');
+  setTimeout(() => countUp($('[data-countup]')), 1500);
+}));
+hero.addEventListener('pointermove', e => {
+  if (e.pointerType !== 'mouse' || REDUCED.matches) return;
+  const r = hero.getBoundingClientRect();
+  hero.style.setProperty('--mx', (((e.clientX - r.left) / r.width - .5) * 2).toFixed(3));
+  hero.style.setProperty('--my', (((e.clientY - r.top) / r.height - .5) * 2).toFixed(3));
+});
+hero.addEventListener('pointerleave', () => { hero.style.setProperty('--mx', 0); hero.style.setProperty('--my', 0); });
+
+/* scroll-driven scenes */
+const scrubs = $$('[data-scrub]');
+const diff = $('#difference');
+const diffCards = $$('.diff-card');
+const headerEl = $('header.site');
+const toTop = $('#toTop');
+
+function frameWork(){
+  const y = scrollY, vh = innerHeight;
+  headerEl.classList.toggle('is-stuck', y > 40);
+  toTop.classList.toggle('show', y > 900);
+  sweep();
+  if (REDUCED.matches) return;
+
+  hero.style.setProperty('--hp', clamp(y / (hero.offsetHeight + 40), 0, 1).toFixed(4));
+
+  scrubs.forEach(el => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--p', clamp((vh - r.top) / (vh + r.height), 0, 1).toFixed(4));
+  });
+
+  const dr = diff.getBoundingClientRect();
+  const sp = clamp(-dr.top / Math.max(1, dr.height - vh), 0, 1);
+  diff.style.setProperty('--sp', sp.toFixed(4));
+  const idx = Math.min(diffCards.length - 1, Math.floor(sp * diffCards.length * 1.02));
+  diffCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+}
+
+if (REDUCED.matches){
+  scrubs.forEach(el => el.style.setProperty('--p', '.7'));
+  diff.style.setProperty('--sp', '1');
+  diffCards.forEach(c => c.classList.add('is-active'));
+}
+
+/* driven by both the scroll event and a frame poll: some embedded contexts never deliver `scroll` */
+let lastY = -1, lastH = -1;
+function loop(){
+  if (scrollY !== lastY || innerHeight !== lastH){ lastY = scrollY; lastH = innerHeight; frameWork(); }
+  requestAnimationFrame(loop);
+}
+addEventListener('scroll', frameWork, { passive: true });
+addEventListener('resize', frameWork, { passive: true });
+requestAnimationFrame(loop);
+frameWork();
+
+toTop.addEventListener('click', () => scrollTo({ top: 0 }));
+
+/* ---------- header: shop dropdown, drawer, promo ---------- */
+const shopItem = $('#shopNavItem');
+shopItem.addEventListener('mouseenter', () => shopItem.classList.add('open'));
+shopItem.addEventListener('mouseleave', () => shopItem.classList.remove('open'));
+$('#promoClose').addEventListener('click', () => $('#promoBar').remove());
+const drawer = $('#drawer');
+$('#navToggle').addEventListener('click', () => drawer.classList.add('show'));
+$('#drawerClose').addEventListener('click', () => drawer.classList.remove('show'));
+drawer.addEventListener('click', e => { if (e.target === drawer) drawer.classList.remove('show'); });
+
+/* ---------- overlays ---------- */
+function openOverlay(el){ el.classList.add('show'); document.documentElement.classList.add('modal-open'); }
+function closeOverlay(el){ el.classList.remove('show'); document.documentElement.classList.remove('modal-open'); }
+$$('.overlay').forEach(ov => ov.addEventListener('click', e => { if (e.target === ov) closeOverlay(ov); }));
+document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $$('.overlay.show').forEach(closeOverlay); drawer.classList.remove('show'); } });
+
+const searchOverlay = $('#searchOverlay');
+$('#searchBtn').addEventListener('click', () => { openOverlay(searchOverlay); setTimeout(() => $('#searchInput').focus(), 40); });
+$('#searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') window.location.href = '/?s=' + encodeURIComponent(e.target.value) + '&post_type=product';
+});
+$$('.search-box .suggest span').forEach(s => s.addEventListener('click', () => {
+  window.location.href = '/?s=' + encodeURIComponent(s.textContent) + '&post_type=product';
+}));
+
+const payOverlay = $('#payInfoOverlay');
+$('#payModalClose').addEventListener('click', () => closeOverlay(payOverlay));
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-pay-modal]');
+  if (!t) return;
+  e.preventDefault(); e.stopPropagation();
+  openPayModal(t.dataset.payModal, parseFloat(t.dataset.price) || 0);
+});
+function openPayModal(kind, price){
+  const title = $('#payModalTitle'), plans = $('#payModalPlans'), note = $('#payModalNote');
+  if (kind === 'afterpay'){
+    const each = (price / 4).toFixed(2);
+    title.textContent = 'Pay in 4 interest-free payments with Afterpay';
+    plans.innerHTML = ['Today','In 2 weeks','In 4 weeks','In 6 weeks'].map(w =>
+      '<div class="pay-plan"><div class="pay-plan-left"><span class="pay-plan-amount">$' + each + '</span><span class="pay-plan-freq">1 of 4 payments</span></div><span class="pay-plan-when">' + w + '</span></div>').join('');
+    note.textContent = 'No interest, no fees when you pay on time. Available at checkout for eligible orders.';
+  } else {
+    title.textContent = 'Pay over time with Affirm';
+    plans.innerHTML = '<div class="pay-plan"><div class="pay-plan-left"><span class="pay-plan-amount">$' + (price / 12).toFixed(2) + '/mo</span><span class="pay-plan-freq">12 months</span></div><span class="pay-plan-when">Total ' + money(price) + '</span></div>';
+    note.textContent = 'Rates from 0–36% APR. Payment options through Affirm are subject to an eligibility check. Available on orders over $50.';
+  }
+  openOverlay(payOverlay);
+}
+
+/* entry quiz popup — retained, but delayed so it does not interrupt the hero */
+const quizOverlay = $('#quizOverlay');
+$('#quizClose').addEventListener('click', () => closeOverlay(quizOverlay));
+const quizSeenKey = 'myalche_home_quiz_seen';
+if (!sessionStorage.getItem(quizSeenKey)) {
+  setTimeout(() => {
+    if (!$$('.overlay.show').length && scrollY < innerHeight * 1.35) {
+      openOverlay(quizOverlay);
+      sessionStorage.setItem(quizSeenKey, '1');
+    }
+  }, 9000);
+}
+
+/* subtle reading progress; it connects the long-form home experience */
+const pageProgress = $('#pageProgress');
+function paintPageProgress(){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  pageProgress.style.transform = 'scaleX(' + (max > 0 ? clamp(scrollY / max, 0, 1) : 0) + ')';
+}
+addEventListener('scroll', paintPageProgress, { passive:true });
+addEventListener('resize', paintPageProgress, { passive:true });
+paintPageProgress();
+
+/* newsletter */
+$('#newsForm').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!$('#newsEmail').value.trim()) return;
+  e.target.reset();
+  toast('Thanks! Your 10% off code is on its way.');
+});
+
+refreshCartPill();
+</script>
+
+</body>
+</html>
