@@ -103,8 +103,7 @@ nav.main-nav{gap:clamp(17px,1.8vw,28px);font-size:12px;letter-spacing:.095em;}
   display:block;
   width:100%;
   height:100%;
-  background:#f05a47;
-  box-shadow:0 1px 6px rgba(240,90,71,.65);
+  background:#1e2749;
   transform:scaleX(0);
   transform-origin:left center;
 }
